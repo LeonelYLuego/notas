@@ -1,0 +1,26 @@
+# Glosario de Machine Learning
+
+- _conjunto de entrenamiento_ son los ejemplos que el sistema utiliza para aprender.
+- _instancia de entrenamiento o muestra_ es sólo un ejemplo del conjunto de entrenamiento.
+- _exactitud_ proporción de predicciones correctas.
+- _procesamiento de datos_ convertir los datos de su forma no tratada a un formato más legible.
+- _etiquetas_ solución deseada.
+- _atributo_ tipo de dato. `Kilometraje`
+- _característica_ tipo de dato con su valor. `Kilometraje = 20`
+- _política_ define qué acción debe elegir el agente cuando se encuentra en una situación determinada (aprendizaje reforzado).
+- _fuera de núcleo_ los datos no se encuentran en donde está el sistema.
+- _tasa de aprendizaje_ parámetro importante de los sistemas de aprendizaje en línea de qué tan rápido deben adaptarse a los datos cambiantes.
+- _valores atípicos_ datos no representativos.
+- _medida de similitud_ que tanta similitud tiene un dato con otro.
+- _función de utilidad_ mide que tan bueno es un model.
+- _función de perdida_ mide que tan malo es un modelo.
+- _inferencia_ aplicar el modelo para hacer predicciones sobre nuevos casos.
+- _ruido de muestreo_ datos no representativos como resultado de casualidad en muestras pequeñas.
+- _sesgo de muestreo_ datos no representativos en muestras muy grandes.
+- _ingenería de características_ crear un buen conjunto de características para entrenar.
+- _generalizar_ hacer predicciones de datos no vistos.
+- _sobreajuste_ el modelo funciona bien en los datos de entrenamiento, pero no generaliza bien.
+- _regularización_ restringir un modelo para simplificarlo y reducir el riesgo de sobreajuste.
+- _hiperparámetro de regularización_ la cantidad de regularización a aplicar durante el aprendizaje.
+- _error de generalización, error fuera de muestra_ la tasa de error en casos nuevos.
+- _tubería_ una secuencia de componentes de procesamiento de datos.
