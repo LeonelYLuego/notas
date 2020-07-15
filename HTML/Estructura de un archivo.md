@@ -16,26 +16,26 @@
 
 
 
->`<!DOCTYPE html>` Definición de tipo de documento correspondiente a la versión y la variante de HTML que se utiliza para escribir la página.
+`<!DOCTYPE html>` Definición de tipo de documento correspondiente a la versión y la variante de HTML que se utiliza para escribir la página.
 
->`<html></html>` Indica el comienzo y el final de una página, es el elemento raíz. 
->
-> - `lang = "es"` Idioma principal. 
+`<html></html>` Indica el comienzo y el final de una página, es el elemento raíz. 
 
-> `<head></head>` Inicio y final de la cabecera (No visualiza en el contenido de la página), contienen los metadatos de la página. 
+ - `lang = "es"` Idioma principal. 
 
-> `<title></title>` Muestra el titulo (es obligatoria). 
+ `<head></head>` Inicio y final de la cabecera (No visualiza en el contenido de la página), contienen los metadatos de la página. 
 
-> `<body></body>` Comienzo y final del cuerpo, contenido visible de la página. 
+ `<title></title>` Muestra el titulo (es obligatoria). 
 
-> `<! -- comentario -->` Comentario.
+ `<body></body>` Comienzo y final del cuerpo, contenido visible de la página. 
 
-> `<meta/>` Metadatos.
->
->- `charset = "utf-8"` Juego de caracteres.
->- `http-equiv="Refresh" content="5"` Refresca la página cada 5 segundos.
->- `http-equiv="Refresh" content="5; URL=http://www.google.com"` Redirecciona a la página en 5 segundos.
->- `name="propiedad" content="contenido"` Incluir propiedades del documento. 
->- `name="robots" content="noindex, nofollow`  para que la página no sea indexada 
+ `<! -- comentario -->` Comentario.
+
+ `<meta/>` Metadatos.
+
+- `charset = "utf-8"` Juego de caracteres.
+- `http-equiv="Refresh" content="5"` Refresca la página cada 5 segundos.
+- `http-equiv="Refresh" content="5; URL=http://www.google.com"` Redirecciona a la página en 5 segundos.
+- `name="propiedad" content="contenido"` Incluir propiedades del documento. 
+- `name="robots" content="noindex, nofollow`  para que la página no sea indexada 
 
 ![Estructura de un archivo](estructura_archivo.png)

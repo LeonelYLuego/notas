@@ -6,13 +6,13 @@ Los enlaces se definen con la etiqueta `<a></a>` y su función es llevar al usar
 
 `href=""` especifica el destino del enlace.
 
-| Valor                              | Ubicación                                                    |
-| ---------------------------------- | ------------------------------------------------------------ |
-| #id                                | Vinculo a un enlace dentro de la página donde sea declarado en un id. |
-| documento.html                     | Vinculo a un archivo con cualquier extensión dentro de la carpeta. |
-| documento.html#id                  | Vinculo a otro documento que se abre en la etiqueta id.      |
-| mailto:leonel-leonel-1@hotmail.com | Abre en la computadora el gestor de correos para que pueda enviar un correo a la dirección. |
-| https://www.google.com             | Abre la ventana con ese link.                                |
+| Valor                          | Ubicación                                                    |
+| ------------------------------ | ------------------------------------------------------------ |
+| #id                            | Vinculo a un enlace dentro de la página donde sea declarado en un id. |
+| documento.html                 | Vinculo a un archivo con cualquier extensión dentro de la carpeta. |
+| documento.html#id              | Vinculo a otro documento que se abre en la etiqueta id.      |
+| mailto:leonelyluego@correo.com | Abre en la computadora el gestor de correos para que pueda enviar un correo a la dirección. |
+| https://www.google.com         | Abre la ventana con ese link.                                |
 
 `target=""` especifica donde abrir el documento.
 

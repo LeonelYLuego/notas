@@ -24,3 +24,4 @@
 - _hiperparámetro de regularización_ la cantidad de regularización a aplicar durante el aprendizaje.
 - _error de generalización, error fuera de muestra_ la tasa de error en casos nuevos.
 - _tubería_ una secuencia de componentes de procesamiento de datos.
+- _muestreo estratificado_ muestreo de datos sin sesgo.

@@ -111,3 +111,15 @@ Para ignorar archivos se crea el archivo .gitignore que especifica las rutas de 
 `taks/` ignora las carpetas.
 
 `*.php` ignora todos los archivos con terminación .php.
+
+## Crear repositorio en GitHub y subir archivos
+
+`git remote -v` ver si ya existe un repositorio.
+
+`git remote add <nombre del repo> <url del repo>` añadir un repositorio.
+
+`git push -u <nombre del repo> <nobre de la rama>` subir los archivos al repositorio.
+
+`git push ` hace lo mismo que el comando anterior, pero el comando anterior se debe ejecutar al menos una vez.
+
+`git puh <nombre del repo> --all` sube todas las ramas de desarrollo.
