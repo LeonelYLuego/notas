@@ -123,4 +123,72 @@ from sklearn.model_selection import train_test_split
 train_set, test_set = train_test_split(housing, test_size=0.2, random_state=42)
 ~~~
 
-Si el conjunto de datos es pequeño al momento de dividirlo puede ocurrir el riesgo de introducir un sesgo de muestreo significativo, para evitarlo se divide el conjunto de datos tomando en cuenta su característica más representativa.
+<mark>Volver después</mark>
+
+Si el conjunto de datos es pequeño al momento de dividirlo puede ocurrir el riesgo de introducir un sesgo de muestreo significativo, para evitarlo se divide el conjunto de datos tomando en cuenta su característica más representativa. Es importante tener un número suficiente de instancias en el conjunto de datos para cada estrato, o bien la estimación. La importancia de un estrato puede estar sesgada. Esto significa que no se debe tener demasados estratos, y cada estrato debe ser lo suficientemente grande.
+
+La funciónes `pd.cut()` y `sklearn.model_selection.StratifiedShuffleSplit()` ayudan a esto, por ejemplo:
+
+~~~python
+housing["income_cat"] = pd.cut(housing["median_income"], bins[0., 1.5, 3.0, 4.5, 6., np.inf], labels=[1,2,3,4,5])
+
+#Estas categorías de ingresos se pueden representar
+housing["income_cat"].hist()
+plt.show()
+
+from sklearn.model_selection import StratifiedShuffledSplit
+
+split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
+for train_index, test_index in split.split(housing, hosing["income_cat"]):
+    strat_train_set = housing.loc[train_index]
+    strat_test_set = housing.loc[test_index]
+    
+strat_test_set["income_cat"].value_counts() / len(strat_test_set)
+
+for set_ in (strat_train_set, strat_test_set):
+    set_.drop("income_cat", axis=1, inplace=True)
+~~~
+
+## Descubrir y visualizar los datos para obtener información
+
+~~~python
+housing = strat_train_set.copy()
+housing.plot(kind="scatter", x="longitude", y="latitude")
+housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.1)
+housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.4, s=housing["population"]/100, label="population", figsize=(10, 7), c="median_house_value", cmap=plt.get_cmap("jet"), colorbar=True)
+plt.legend()
+#Correlaciones
+housing.plot(kind="scatter", x="median_income", y="median_house_value", alpha=0.1)
+~~~
+
+Ahora se profudirizará más en los datos, dejando de lado el conjunto de pruebas, se crea una copio del conjunto de entrenamiento para no dañarlo.
+
+En esta etapa se pueden gráficar los datos para entenderlos mejor.
+
+### Buscar correlaciones
+
+Cuando el conjunto de datos no es demaciado grande se puede calcular fácilmente el coeficiente de correlación estándar (también llamado R de Pearson) entre cada par de atributos usando le método `corr()`
+
+~~~python
+corr_matrix = housing.corr()
+corr_matrix["median_house_value"].sort_values(ascending=False)
+~~~
+
+El coeficiente de correlación oscila entre -1 y 1. Cuando está cerca de 1 significa que existe una fuerte correlación positiva, cuando el coeficiente de correlación está cerca de -1 significa que hay una fuerte correlación negativa, finalmente los coeficientes cercanos a 0 significa que no ha correlación lineal.
+
+![coeficiente de correlación](cof_correlacion.png)
+
+El coeficiente de correlación sólo mide correlaciones lineales (si X sube, entonces Y generalmente sube/baja).
+
+Otra forma de verificar la correlación entre los atributo es usando el método `scatter_matrix()` que traza cada atributo numérico con cada otro atributo numérico.
+
+~~~python
+from pandas.plotting import scatter_matrix
+
+attributes = ["median_house_value", "median_income", "total_rooms", "housing_median_age"]
+scatter_matrix(housing[attributes], figsize=(12, 8))
+~~~
+
+### Experimentar con combinaciones de atributos
+
+Una última cosa que se puede hacer antes de preparar los datos para los algoritmos de Machine Learning es probar varias combinaciones de atributos. 
