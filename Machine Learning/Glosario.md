@@ -25,3 +25,5 @@
 - _error de generalización, error fuera de muestra_ la tasa de error en casos nuevos.
 - _tubería_ una secuencia de componentes de procesamiento de datos.
 - _muestreo estratificado_ muestreo de datos sin sesgo.
+- _codificación única_ crear un atributo binario por categoría.
+- _aprendizaje conjunto_ construir un modelo sobre muchos modelos.

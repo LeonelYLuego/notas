@@ -85,7 +85,7 @@ El vistazo rápido a los datos sirve para detectar cosas en ellos y para entende
 
 Antes de empezar a analizar más los dato hay que hacer un conjunto de pruebas y entrenamiento y dejar el conjunto de pruebas a un lado para después utilizarlo para medir que tan bueno es nuestro sistema.
 
-Se puede generar una función para obtener el conjunto de prueba aleatoriamente:
+Se puede generar una función para obtener el conjunto de prueba aleatoria-mente:
 
 ~~~python
 def split_train_test(data, test_ratio):
@@ -125,25 +125,25 @@ train_set, test_set = train_test_split(housing, test_size=0.2, random_state=42)
 
 <mark>Volver después</mark>
 
-Si el conjunto de datos es pequeño al momento de dividirlo puede ocurrir el riesgo de introducir un sesgo de muestreo significativo, para evitarlo se divide el conjunto de datos tomando en cuenta su característica más representativa. Es importante tener un número suficiente de instancias en el conjunto de datos para cada estrato, o bien la estimación. La importancia de un estrato puede estar sesgada. Esto significa que no se debe tener demasados estratos, y cada estrato debe ser lo suficientemente grande.
+Si el conjunto de datos es pequeño al momento de dividirlo puede ocurrir el riesgo de introducir un sesgo de muestreo significativo, para evitarlo se divide el conjunto de datos tomando en cuenta su característica más representativa. Es importante tener un número suficiente de instancias en el conjunto de datos para cada estrato, o bien la estimación. La importancia de un estrato puede estar sesgada. Esto significa que no se debe tener demasiados estratos, y cada estrato debe ser lo suficientemente grande.
 
-La funciónes `pd.cut()` y `sklearn.model_selection.StratifiedShuffleSplit()` ayudan a esto, por ejemplo:
+La funciones `pd.cut()` y `sklearn.model_selection.StratifiedShuffleSplit()` ayudan a esto, por ejemplo:
 
 ~~~python
-housing["income_cat"] = pd.cut(housing["median_income"], bins[0., 1.5, 3.0, 4.5, 6., np.inf], labels=[1,2,3,4,5])
+housing["income_cat"] = pd.cut(housing["median_income"], bins=[0., 1.5, 3.0, 4.5, 6., np.inf], labels=[1,2,3,4,5])
 
 #Estas categorías de ingresos se pueden representar
 housing["income_cat"].hist()
 plt.show()
 
-from sklearn.model_selection import StratifiedShuffledSplit
+from sklearn.model_selection import StratifiedShuffleSplit
 
 split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
-for train_index, test_index in split.split(housing, hosing["income_cat"]):
+for train_index, test_index in split.split(housing, housing["income_cat"]):
     strat_train_set = housing.loc[train_index]
     strat_test_set = housing.loc[test_index]
     
-strat_test_set["income_cat"].value_counts() / len(strat_test_set)
+print(strat_test_set["income_cat"].value_counts() / len(strat_test_set))
 
 for set_ in (strat_train_set, strat_test_set):
     set_.drop("income_cat", axis=1, inplace=True)
@@ -151,23 +151,13 @@ for set_ in (strat_train_set, strat_test_set):
 
 ## Descubrir y visualizar los datos para obtener información
 
-~~~python
-housing = strat_train_set.copy()
-housing.plot(kind="scatter", x="longitude", y="latitude")
-housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.1)
-housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.4, s=housing["population"]/100, label="population", figsize=(10, 7), c="median_house_value", cmap=plt.get_cmap("jet"), colorbar=True)
-plt.legend()
-#Correlaciones
-housing.plot(kind="scatter", x="median_income", y="median_house_value", alpha=0.1)
-~~~
+Ahora se profundizará más en los datos, dejando de lado el conjunto de pruebas, se crea una copio del conjunto de entrenamiento para no dañarlo.
 
-Ahora se profudirizará más en los datos, dejando de lado el conjunto de pruebas, se crea una copio del conjunto de entrenamiento para no dañarlo.
-
-En esta etapa se pueden gráficar los datos para entenderlos mejor.
+En esta etapa se pueden graficar los datos para entenderlos mejor.
 
 ### Buscar correlaciones
 
-Cuando el conjunto de datos no es demaciado grande se puede calcular fácilmente el coeficiente de correlación estándar (también llamado R de Pearson) entre cada par de atributos usando le método `corr()`
+Cuando el conjunto de datos no es demasiado grande se puede calcular fácilmente el coeficiente de correlación estándar (también llamado R de Pearson) entre cada par de atributos usando le método `corr()`
 
 ~~~python
 corr_matrix = housing.corr()
@@ -191,4 +181,279 @@ scatter_matrix(housing[attributes], figsize=(12, 8))
 
 ### Experimentar con combinaciones de atributos
 
-Una última cosa que se puede hacer antes de preparar los datos para los algoritmos de Machine Learning es probar varias combinaciones de atributos. 
+Una última cosa que se puede hacer antes de preparar los datos para los algoritmos de Machine Learning es probar varias combinaciones de atributos. Por ejemplo:
+
+~~~python
+housing["rooms_per_household"] = housing["total_rooms"]//housing["households"]
+housing["bedrooms_per_room"] = housing["total_bedrooms"]/housing["total_rooms"]
+housing["population_per_household"]=housing["population"]/housing["households"]
+corr_matrix = housing.corr()
+corr_matrix["median_hous_value"].short_values(ascending=False)
+~~~
+
+## Preparar los datos para algoritmos de Machine Learning
+
+Para preparar los datos para el algoritmo de Machine Learning  se recomienda hacerlo con funciones en vez de manualmente ya que:
+
+- Esto permite reproducir estas transformaciones fácilmente en cualquier conjunto de datos.
+- Se creará gradualmente una biblioteca de funciones de transformación que se podrá reutilizar en futuros proyectos.
+- Se puede usar estas funciones en un sistema en vivo para transformar los nuevos datos antes de alimentar el algoritmo.
+- Esto permitirá probar fácilmente varias transformaciones y ver qué combinaciones de transformaciones funciona mejor.
+
+Primero se deben limpiar los datos de entrenamiento separando los valores de predicción con las etiquetas.
+
+~~~python
+housing = strat_train_set.drop("median_house_value", axis=1)
+housing_labels = strat_train_set["median_house_value"].copy()
+~~~
+
+### Limpieza de datos
+
+Si uno de los atributos tiene valores faltantes hay tres opciones:
+
+1. Deshacerse de los distritos correspondientes.
+2. Deshacerse de todo el atributo.
+3. Estableces los valores con algún otro valor (cero, media, mediana, etc.).
+
+~~~python
+housing.dropna(subset=["total_bedrooms"]) #opción 1
+housing.drop("total_bedrooms", axis=1) #opción 2
+median = housing["total_bedromms"].median() #opción 3
+housing["total_bedrooms"].fillna(median. inplace=True)
+~~~
+
+`Scikit-learn` proporciona una clase para cuidar los valores perdidos, primero se necesita crear un instancia de la clase `SimpleImputer` especificando que se desea reemplazar los valores faltantes de cada atributo con la mediana de ese atributo.
+
+~~~python
+from sklearn.impute import SimpleImputer
+
+imputer = SimpleImputer(strategy="median")
+~~~
+
+Dado que la mediana sólo puede calcular en atributos numéricos, se debe crear una copia con los datos de los atributos no numéricos.
+
+~~~python
+housing_num = housing.drop("ocean_proximity", axis=1)
+~~~
+
+Ahora se puede ajustar la instancia `imputer` en los datos de entrenamiento con el método `fit()`.
+
+~~~python
+imputer.fit(housing_num)
+~~~
+
+`imputer` simplemente calcula la mediana de cada atributo y almacena los resultados en su atributo `statistics_`, no se puede estar seguro de que no habrá valores faltantes en los datos nuevos una vez que el sistema se active, por lo que es más seguro aplicar el `imputer` a todos los atributos numéricos.
+
+~~~python
+print(imputer.statistics_)
+print(housing_num.median().values)
+~~~
+
+Ahora se puede usar este "entrenado" `imputer` para transformar el conjunto de entrenamiento reemplazando loa valores faltantes con las medianas aprendidas.
+
+~~~python
+X = imputer.transform(housing_num)
+housing_tr = pd.DataFrame(X, columns=housing_num.colums, index=housing_num.index)
+~~~
+
+### Manejo de texto y atributos categóricos
+
+En en conjunto de datos puede haber texto no arbitrario: hay un número limitado de valores posibles, cada uno de los cuales representa una categoría, entonces ese atributo es un atributo categórico. La mayoría de algoritmos de Machine Learning prefieren trabajar con números, por lo que ha que convertir las categorías de texto a números. Para esto se puede utilizar la clase `sklearn.preprocessing.OrdinalEncoder`.
+
+~~~python
+from sklearn.preprocessing import OrdinalEncoder
+ordinal_encoder = OrdinalEncoder()
+housing_cat_encoded = ordinal_encoder.fit_transform(housing_cat)
+print(housing_cat_encoded[:10])
+~~~
+
+Se puede obtener la lista de categorías utilizando el atributo `categories_` de la instancia. Es una lista que contiene una matriz de categorías por cada atributo categórico.
+
+~~~python
+print(ordinal_encoder.categories_)
+~~~
+
+Un problema con esta representación es que los algoritmos de Machine Learning supondrán que dos valores son más similares que dos valores distantes. Esto puede estar bien en algunos casos (por ejemplo, para categorías ordenadas como "malo", "promedio", "bueno", "excelente"). Para solucionar este problema una solución común es crear un atributo binario por categoría, se llama codificación única. `sklearn.preprocessing.OneHotEncoder` proporciona una clase para convertir valores categóricos en vectores únicos.
+
+~~~python
+from sklearn.preprocessing import OneHotEncoder
+cat_encoder = OneHotEncoder()
+housing_cat_1hot = cat_encoder.fit_transform(housing_cat)
+print(housing_cat_1hot.toarray())
+print(cat_encoder.categories_)
+~~~
+
+Si un atributo categórico tiene una gran cantidad de categorías posibles, la codificación de un solo resultado dará como resultado una gran cantidad de características de entrada. Esto puede ralentizar el entrenamiento y degradar el rendimiento. Si esto sucede, es posible que se desee remplazar la entrada categórica con características numéricas útiles relacionadas con las categorías. Alternativamente se puede reemplazar cada categoría con un vector aprendible de baja dimensión llamado incrustación. La representación de cada categoría se aprendería durante el entrenamiento.
+
+### Transformadores personalizados
+
+Aunque Scikit-Learn proporciona muchos transformadores útiles, se deberá escribir los propios para tareas como operaciones de limpieza personalizadas, todo lo que se necesita es hacer es crear una clase e implementar tres métodos `fit()`, `transform()` y `fit_transform()`.
+
+~~~python
+from sklearn.base import BaseEstimator, TransformerMixin
+
+rooms_ix, bedrooms_ix, population_ix, households_ix = 3, 4, 5, 6
+
+class CombinedAttributesAdder(BaseEstimator, TransformerMixin):
+  def __init__(self, add_bedrooms_per_room = True):
+    self.add_bedrooms_per_room = add_bedrooms_per_room
+  def fit(self, X, y=None):
+    return self
+  def transform(self, X):
+    rooms_per_household = X[:, rooms_ix] / X[:, households_ix]
+    population_per_household = X[:, bedrooms_ix] / X[:, rooms_ix]
+    if self.add_bedrooms_per_room:
+      bedrooms_per_room = X[:, bedrooms_ix] / X[:, rooms_ix]
+      return np.c_[X, rooms_per_household, population_per_household, bedrooms_per_room]
+    else:
+      return np.c_[X, rooms_per_household, population_per_household]
+
+attr_adder = CombinedAttributesAdder(add_bedrooms_per_room=False)
+housing_extra_attribs = attr_adder.transform(housing.values)
+~~~
+
+### Escalado de funciones
+
+Una de las transformaciones más importantes que se debe aplicar a los datos es el escalado de características, los algoritmos de Machine Learning no funcionan bien cuando los atributos numéricos de entrada tienen escalas muy diferentes. Hay dos formas de hacer que todos los atributos tengan la misma escala: _normalización_, _estadarización_.
+
+- La normalización es el más simple: los valores se desplazan y reescalan para que terminen en un rango de 0 a 1. Esto se hace restando el valor mínimo y dividiendo por el máximo menos el mínimo. Scikit-Learn proporciona un transformador llamado `MinMaxScaler` para esto.
+- La estandarización es diferente: primero se resta el valor medio, y luego se divide por la desviación estandar para que la distribución tenga una varianza unitaria. Sckit-Learn proporciona un transformador llamado `StandarScaler` para la estandarización.
+
+La estandarización no limita los valores a un rango específico, lo que puede ser un problema para algunos algoritmos, por ejemplo las redes neuronales a menudo esperan un valor de entrada que varía de 0 a 1. Sin embargo, la estandarización se ve mucho menos afectada por los valores atípicos.
+
+### Tuberías de transformación
+
+Scikit-Learn proporciona la clase `Pipeline` para ayudar con las secuencias de transformación.
+
+~~~python
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+
+num_pipeline = Pipeline([('imputer', SimpleImputer(strategy="median")), ('attribs_adder', CombinedAttributesAdder()), ('std_scaler', StandardScaler())])
+
+housing_num_tr = num_pipeline.fit_transform(housing_num)
+~~~
+
+Scikit-Learn introduce `ColumnTransformer` que es un transformador capaz de manejar todas las columnas, aplicando transformaciones apropiadas a cada columna.
+
+~~~python
+from sklearn.compose import ColumnTransformer
+
+num_attribs = list(housing_num)
+cat_attribs = ["ocean_proximity"]
+
+full_pipeline = ColumnTransformer([("num", num_pipeline, num_attribs), ("cat", OneHotEncoder(), cat_attribs)])
+~~~
+
+## Seleccionar y entrenar un modelo
+
+### Entrenamiento y evaluación en el conjunto de entrenamiento
+
+Primero se puede entrenar un modelo de regresión lineal.
+
+~~~python
+from sklearn.linear_model import LinearRegression
+
+lin_reg = LinearRegression()
+lin_reg.fit(housing_prepared, housing_labels)
+
+some_data = housing.iloc[:5]
+some_labels = housing_labels.iloc[:5]
+some_data_prepared = full_pipeline.transform(some_data)
+print("Predictions: ", lin_reg.predict(some_data_prepared))
+print("Labels: ", list(some_labels))
+~~~
+
+Con el error cuadrático medio (RMSE) se puede medir el error del modelo.
+
+~~~python
+from sklearn.metrics import mean_squared_error
+housing_predictions = lin_reg.predict(housing_prepared)
+lin_mse = mean_squared_error(housing_labels, housing_predictions)
+lin_rmse = np.sqrt(lin_mse)
+print(lin_rmse)
+~~~
+
+También se puede entrenar un modelo de árbol de desición.
+
+~~~python
+from sklearn.tree import DecisionTreeRegressor
+
+tree_reg = DecisionTreeRegressor()
+tree_reg.fit(housing_prepared, housing_labels)
+
+housing_predictions = tree_reg.predict(housing_prepared)
+tree_mse = mean_squared_error(housing_labels, housing_predictions)
+tree_rmse = np.sqrt(tree_mse)
+print(tree_rmse)
+~~~
+
+### Mejor evaluación usando validación cruzada
+
+Una forma de evaluara el modelo del árbol de decisión y el modelo de regresión es utilizando la función `train_test_split()` para crear con el conjunto de entrenamiento un conjunto de validación.
+
+Una gran alternativa es usar la característica de Scikit-Learn K-fold cross-validation dividiendo el conjunto de entrenamiento en 10 subconjuntos distintos llamados pliegues, luego entrenando y evaluando el modelo de árbol de decisión 10 veces, eligiendo pliegues diferentes para la evaluación cada vez y entrenando en los otros 9 pliegues. El resultado es una matriz que contiene los 10 puntajes de evaluación.
+
+~~~python
+from sklearn.model_selection import cross_val_score
+scores = cross_val_score(tree_reg, housing_prepared, housing_labels, scoring="neg_mean_squared_error", cv=10)
+tree_rmse_scores = np.sqrt(-scores)
+
+def display_scores(scores):
+  print("Scores: ", scores)
+  print("Mean: ", scores.mean())
+  print("Standar deviation: ", scores.std())
+
+print("Decision Tree")
+display_scores(tree_rmse_scores)
+
+lin_scores = cross_val_score(lin_reg, housing_prepared, housing_labels, scoring="neg_mean_squared_error", cv=10)
+lin_rmse_scores = np.sqrt(-lin_scores)
+
+display_scores(lin_rmse_scores)
+~~~
+
+La validación cruzada permite obtener no sólo una estimación del rendimiento del modelo, sino también una medida de la precisión de esta estimación, es decir, su desviación estándar.
+
+El modelo de bosques aleatorios trabaja entrenando muchos árboles de decisión en subconjuntos aleatorios de características, y luego promedia las predicciones.
+
+~~~python
+from sklearn.ensemble import RandomForestRegressor
+forest_reg = RandomForestRegressor()
+forest_reg.fit(housing_prepared, housing_labels)
+
+forest_scores = cross_val_score(forest_reg, housing_prepared, housing_labels, scoring="neg_mean_squared_error", cv=10)
+forest_rmse_scores = np.sqrt(-forest_scores)
+display_scores(forest_rmse_scores)
+~~~
+
+Se debe guardar cada modelo con el que se experimenta para poder regresar fácilmente a cualquier modelo que se desee, esto permitirá comparar fácilmente los puntajes entre los tipos de modelos y comparar los tipos de errores que cometen.
+
+~~~python
+import joblib
+
+joblib.dump(my_model, "my_model.pkl")
+#cargar el modelo
+my_model_loaded = joblib.load("my_model.pkl")
+~~~
+
+## Afinar el modelo
+
+Ahora se tiene una lista de modelos prometedores que se necesitan ajustar.
+
+### Búsqueda de cuadrícula
+
+Una opción sería jugar con los hiperparámetros manualmente hasta que se encuentre una combinación de valores hiperparámetros. Este sería un trabajo tedioso, y es posible que no se tenga el tiempo para explorar muchas combinaciones. En cambio `sklearn.model_selection.GridSearchCV` para buscar los hiperparámetros. Todo lo que se necesita es decirle que hiperparámetros se desea experimentar y qué valores probar, y utilizar la validación cruzadas para evaluar todas las combinaciones posibles de valores de hiperparámetros.
+
+~~~python
+from sklearn.model_selection import GridSearchCV
+
+param_grid = [{'n_estimators':[3, 10, 30], 'max_features':[2,4,6,8]}, {'bootstrap':[False], 'n_estimators':[3,10], 'max_features':[2,3,4]}]
+forest_reg = RandomForestRegressor()
+
+grid_search = GridSearchCV(forest_reg, param_grid, cv=5, scoring='neg_mean_squared_error', return_train_score=True)
+
+grid_search.fit(housing_prepared, housing_labels)
+~~~
+
+Cuando no se tiene idea de qué valores debe tener un hiperparámetro, un enfoque más simple es probar con potencias consecutivas de 10 o un número menor si se desea una búsqueda más detallada.
