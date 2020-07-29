@@ -439,6 +439,8 @@ my_model_loaded = joblib.load("my_model.pkl")
 
 ## Afinar el modelo
 
+<mark>Volver después</mark>
+
 Ahora se tiene una lista de modelos prometedores que se necesitan ajustar.
 
 ### Búsqueda de cuadrícula
@@ -454,6 +456,101 @@ forest_reg = RandomForestRegressor()
 grid_search = GridSearchCV(forest_reg, param_grid, cv=5, scoring='neg_mean_squared_error', return_train_score=True)
 
 grid_search.fit(housing_prepared, housing_labels)
+cvres = grid_search.cv_results_
+for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
+  print(np.sqrt(-mean_score), params)
 ~~~
 
 Cuando no se tiene idea de qué valores debe tener un hiperparámetro, un enfoque más simple es probar con potencias consecutivas de 10 o un número menor si se desea una búsqueda más detallada.
+
+Al aplicarlo se puede obtener la mejor combinación de parámetros con `grid_search.best_params_`, también se puede obtener el mejor estimador con `grid_search.best_estimator_`.
+
+Si `GridSearchCV` se inicializa con `refit=True`, luego, una vez que encuentra el mejor estimador mediante validación cruzada, lo vuelve a capacitar en todo el conjunto de entrenamiento.
+
+### Búsqueda aleatoria
+
+El enfoque de cuadrícula está bien cuando se explora relativamente pocas combinaciones, pero cuando el espacio de búsqueda de hiperparámetros es grande, a menudo es preferible usar `RandomSearchCV` en lugar. Esta clase se puede usar de la misma manera que `GridSearchCV` pero en lugar de probar todas las combinaciones posibles, evalúa un número dado de combinaciones aleatorias seleccionando un valor aleatorio para cada hiperparámetro en cada iteración. Sus beneficios son:
+
+- Si se deja la búsqueda aleatoria ejecute por ejemplo 1000 iteraciones, esta explorará 1000 valores diferentes.
+- Configurando el número de iteraciones se tiene más control sobre el presupuesto de cómputo que desea asignar a la búsqueda de hiperparámetros.
+
+### Métodos de conjunto
+
+Otra forma de ajustar el sistema es intentar combinar los modelos que funcionan mejor. El grupo (o "conjunto") a menudo se desempeñará mejor que el mejor modelo individual especialmente si los modelos individuales cometen tipos de errores muy diferentes.
+
+### Analizar los mejores modelos y sus errores
+
+A menudo se obtendrán buenos conocimientos sobre el problema al inspeccionar los mejores modelos. `RandomForestRegressor` puede indicar la importancia relativa de cada atributo para hace predicciones precisas:
+
+~~~python
+feature_importances = grid_search.best_estimator_.feature_importances_
+print(feature_importances)
+~~~
+
+Se pueden mostrar los puntajes de importancia junto a sus nombre de atributos correspondientes:
+
+~~~python
+extra_attribs = ["rooms_per_hhold", "pop_per_hhold", "bedrooms_per_room"]
+cat_encoder = full_pipeline.named_transformers_["cat"]
+cat_one_hot_attribs = list(cat_encoder.categories[0])
+attributes = num_attribs + extra_attribs + cat_one_hot_attribs
+print(sorted(zip(feature_importance, attributes), reverse=True))
+~~~
+
+Con la información se puede intentar eliminar algunas características menos útiles. También se puede observar los errores específicos que comete el sistema, luego se puede tratar de entender por qué los comete y qué puede solucionar el problema. 
+
+### Evaluar el sistema en el conjunto de prueba
+
+Después de ajustar los modelos por un tiempo, finalmente se tiene un sistema que funciona lo suficientemente bien. Ahora es el momento de evaluar el modelo final en el conjunto de prueba. Para esto se debe obtener las etiquetas del conjunto de prueba, luego transformar los datos `transform()` no `fit_transform()`.
+
+~~~python
+final_model = grid_search.best_estimator_
+
+X_test = strat_test_set.drop("median_house_value", axis=1)
+y_test = strat_test_set["median_house_value"].copy()
+
+X_test_prepared = full_pipeline.transform(X_test)
+
+final_predictions = final_model.predict(X_test_prepared)
+
+final_mse = mean_squared_error(y_test, final_predictions)
+final_rmse = np.sqrt(final_mse)
+print(final_rmse)
+~~~
+
+En algunos casos, tal estimación puntual del error de generalización no será suficiente para convencer de lanzar el modelo: ¿qué para si es sólo un 0.1% mejor que el modelo actual en producción? Es posible que se desee tener una idea de cuán precisa es esta estimación. Para esto se puede calcular un 95% de intervalo de confianza para el error de generalización usando `scipy.stats.t.interval()`
+
+~~~python
+from scipy import stats
+confidence = 0.95
+squared_errors = (final_predictions - y_test) ** 2
+np.sqrt(stats.t.interval(confidence, len(squared_errors) - 1, loc=squared_errors.mean(), scale=stats.sem(squared_errors)))
+~~~
+
+Si se realizó una gran cantidad de ajustes de hiperparámetros, el rendimiento generalmente será ligeramente peor de lo que se midió utilizando la validación cruzada (porque el sistema termina ajustando para funcionar bien en los datos de validación y probablemente no funcionará tan bien en conjuntos de datos desconocidos), pero cuando esto sucede se debe resistir la tentación de ajustar los hiperparámetros para que los números se vean bien en el conjunto de prueba.
+
+Antes de lanzar el sistema se debe documentar:
+
+- La solución
+- Lo que ha aprendido
+- Lo que funcinó
+- Lo que no funcionó
+- Las suposiciones que se hicieron
+- Las limitaciones del sistema
+
+## Inciar, monitorear y mantener el sistema
+
+Ahora se debe guardar el modelo y realizar la documentación del modelo, una vez hecho eso se puede implementar el modelo en el entorno de producción y usarlo con la método `predict()`.
+
+Pero el despliegue del modelo no es el final de la historia, también se debe escribir un código de monitoreo para verificar el rendimiento en vivo del sistema a intervalos regulares y activar alertas cuando se caiga.
+
+Incluso un modelo entrenado para clasificar imágenes de perros y gatos puede necesitar ser reentrenado regularmente, no porque los gatos y los perros muten durante la noche, sino porque las cámaras siguen cambiando, junto con los formatos de imagen, nitidez, brillo y proporciones de tamaño.
+
+Para medir si el sistema se está deteriorando se debe establecer una variable que mida que tan efectivo es el modelo, ya sea mediante una encuesta a los usuarios o dentro del mismo sistema. También se debe definir que hacer en caso de que el sistema fallé lo cuál es un trabajo largo el cual se puede automatizar, algunas de las cosas que se puede automatizar son:
+
+- Recopilar nuevos datos y etiquetarlos.
+- Escribir un script para entrenar el modelo y ajustar los hiperparámetros automáticamente.
+- Escribir un script para evaluar el modelo nuevo y viejo en el conjunto de pruebas actualizado y desplegar el modelo si el rendimiento no ha disminuido (si lo hizo hay que investigar por qué).
+- Evaluar la calidad de los datos de entrada monitoreando si faltan entradas, si la desviación media o estándar se aleja demasiado del conjunto de entrenamiento, o si una categoría empieza a tener nuevos valores.
+
+Finalmente se debe tener una copia de seguridad de cada modelo y de cada conjunto de datos.

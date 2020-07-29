@@ -10,3 +10,12 @@ https://www.youtube.com/watch?v=gsePWTrOCZE&list=PLPl81lqbj-4JiR1Cio6xEygCZDmZmD
 - Ir a la pestaña principal.
 - Seleccionar agregar proyecto a una aplicación web.
 - Nombrar la aplicación, copiar el script y pegarlo en el `<body>` de la aplicación.
+
+## Verificar un usuario
+
+- Abrir la consola.
+- Seleccionar autenticación.
+
+- Seleccionar plantillas.
+- En la parte inferior seleccionar idioma.
+- 
