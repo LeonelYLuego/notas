@@ -18,4 +18,3 @@ https://www.youtube.com/watch?v=gsePWTrOCZE&list=PLPl81lqbj-4JiR1Cio6xEygCZDmZmD
 
 - Seleccionar plantillas.
 - En la parte inferior seleccionar idioma.
-- 

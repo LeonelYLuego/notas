@@ -209,7 +209,7 @@ housing_labels = strat_train_set["median_house_value"].copy()
 
 ### Limpieza de datos
 
-Si uno de los atributos tiene valores faltantes hay tres opciones:
+Si uno de los atributos tiene valores faltantes (nulos) hay tres opciones:
 
 1. Deshacerse de los distritos correspondientes.
 2. Deshacerse de todo el atributo.
