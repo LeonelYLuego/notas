@@ -1,44 +1,38 @@
 # Scikit-Learn
 
-> Aquí iría la descripción de la librería
+~~~python
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import StratifiedShuffleSplit
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import RandomSearchCV
+from sklearn.model_selection import StratifiedKFold
 
-## Documentación
+from sklearn.preprocessing import OrdinalEncoder
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import StandardScaler
 
-`import` importar la librería.
+from sklearn.base import BaseEstimator
+from sklearn.base import TransformerMixin
+from sklearn.base import clone
 
-`sklearn.model_selection.train_test_split(housing, test_size=0.2, random_state=42)` función para dividir conjuntos de datos en múltiples conjuntos.
+from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import SGDClassifier
 
-- _test_size_ tamaño del conjunto de prueba.
-- _random_state_ semilla de valores aleatorios.
+from sklearn.impute import SimpleImputer
 
-`sklearn.model_selection.StratifiedShuffleSplit()` provee indices de entrenamiento/prueba para dividir el conjunto de entrenamiento/prueba.
+from sklearn.pipeline import Pipeline
 
-- _n_splits_ número de repeticiones de barajado y división.
-- _test_size_ tamaño del conjunto de prueba.
-- _random_state_ semilla de valores aleatorios.
+from sklearn.compose import ColumnTransformer
 
-`sklearn.impute.SimpleImpute` transformador de imputación para completar valores perdidos.
+from sklearn.metrics import mean_squared_error
 
-- _strategy_ estrategia de imputación.
-  - mean
-  - median
-  - most_frequent
-  - constant
-- fit(X) ajusta la imputación en X.
-- transform(X) ajusta los datos, luego los transforma.
+from sklearn.tree import DecisionTreeRegressor
 
-`sklearn.preprocessing.MinMaxScaler()` transforma los datos en un rango de 0 a 1.
+from sklearn.ensemble import RandomForestRegressor
 
-- _feature_range=(0,1)_ rango para transformar los datos.
+from sklearn.datasets import fetch_openml
+~~~
 
-`sklearn.prerprocesing.StandarScaler()` transforma los datos en una escala estandar.
 
-`sklearn.pepeline.Pipeline` clase para ayudar con secuencias de trasformación.
-
-- _\_\_init\_\_([('name', ClassTransformer()),...])_ constructor que recibe una lista de tuplas con el etiqueta de la transformación y la clase a ejecutar.
-- _fit_transform(dataset)_ llama a todas los métodos _fit_transfrom_ de las clases de contructor.
-
-`sklearn.compose.ColumnTransformer` aplica transformaciones a las columnas de un array o `DataFrame` de pandas.
-
-- _\_\_init\_\_([('name', ClassTransformer(), colums),...])_ constructor que recibe una lista de tuplas con el etiqueta de la transformación, la clase a ejecutar y en que columnas aplicar.
 

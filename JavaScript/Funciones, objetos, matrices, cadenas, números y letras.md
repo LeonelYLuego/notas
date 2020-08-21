@@ -107,7 +107,7 @@ Para agregar un nuevo método a las matrices:
 ~~~javascript
 function suma{
     var sum = 0, cuenta;
-    `for`(cuenta = 0; cuenta <= this.lenght; cuenta++){
+    for(cuenta = 0; cuenta <= this.lenght; cuenta++){
         sum += this[cuenta];
     }
     return suma;
