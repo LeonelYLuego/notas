@@ -32,4 +32,4 @@
 | `$_SERVER['SCRIPT_URI']`           | Devuelve el URI de la página actual.                         |
 
 
-`$_REQUEST['value']` obtiene el valor enviado por una página web por un form, también se pueden utiliza `$_GET['value']` y `$_POST['value']`. 
+`$_REQUEST['value']` obtiene el valor enviado por una página web por un formulario, también se pueden utilizar `$_GET['value']` y `$_POST['value']`. 

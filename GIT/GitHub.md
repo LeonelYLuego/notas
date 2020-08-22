@@ -8,7 +8,7 @@
 
 `git push ` hace lo mismo que el comando anterior, pero el comando anterior se debe ejecutar al menos una vez.
 
-`git puh <nombre del repo> --all` sube todas las ramas de desarrollo.
+`git push <nombre del repo> --all` sube todas las ramas de desarrollo.
 
 ## Clonar repositorio
 

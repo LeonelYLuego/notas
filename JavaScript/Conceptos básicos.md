@@ -4,7 +4,7 @@
 
 El código de un `script` se puede incluir en 3 lugares: 
 
-- `<head>` se agrega en esta sección con la etiquete `<script>` y se ejecuta antes de que cargue la página. 
+- `<head>` se agrega en esta sección con la etiqueta `<script>` y se ejecuta antes de que cargue la página. 
 - `<body>` se agrega en esta sección con la etiqueta `<script>` y se ejecuta hasta el final de la carga de la página. 
 - `<script src=""><script>` incluye un fichero de código externo. 
 
@@ -13,7 +13,7 @@ El código de un `script` se puede incluir en 3 lugares:
 Se puede visualizar los resultados del `script` en diferentes lugares: 
 
 - `innerHTML()` dentro de un elemento HTML. 
-- `document.write()` dentro del documento HTML, si se utiliza después del que el documento allá cargado, se eliminará todo el código HTML. 
+- `document.write()` dentro del documento HTML, si se utiliza después del que el documento haya cargado, se eliminará todo el código HTML. 
 - `window.alert()` dentro de una alerta del navegador. 
 - `console.log()` dentro de la consola del navegador. 
 

@@ -1,12 +1,12 @@
 # Animaciones
 
-Para crear una animación debemos la regla `@keyframes`, la animación ira cambiando lentamente de un estilo a otro. 
+Para crear una animación debemos usar la regla `@keyframes`, la animación ira cambiando lentamente de un estilo a otro. 
 
 Dentro del elemento se utilizan las siguientes propiedades: 
 
 - `animation-name:` nombre del `@keyframe` a utilizar. 
 - `animation-duration:` duración de la animación en segundos. 
-- `animation-delay:` retraso para iniciar la animación, si tiene un valor negativo la animación iniciara como si hubiera pasado ese tiempo. 
+- `animation-delay:` retraso para iniciar la animación, si tiene un valor negativo la animación iniciará como si hubiera pasado ese tiempo. 
 - `animation-iteration-count:` número de veces que repetir la animación. 
   - `infinite`
 - `animation-direction:` especifica como una animación debe de ser reproducida. 
@@ -28,7 +28,7 @@ Dentro del elemento se utilizan las siguientes propiedades:
 
 Dentro de `@keyframe` se utilizan las siguiente opciones: 
 
-- `{ }` dentro de los corchetes se especifican que propiedades se cambiaran. 
+- `{ }` dentro de los corchetes se especifican qué propiedades se cambiarán. 
 - `from - to:` el estilo va a cambiar de 0% a 100% sin especificar un porcentaje. 
-- `%` que propiedades van a cambiar cuando la animación llegue a ese porcentaje respecto al tiempo. 
+- `%` qué propiedades van a cambiar cuando la animación llegue a ese porcentaje respecto al tiempo. 
 

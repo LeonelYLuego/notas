@@ -41,7 +41,7 @@ list: {
 
 ## Try-Catch 
 
-Para el manejo de errores se utilizan las sentencias `try-catch`, donde el argumento de `catch` debe ser el nombre de la variable, está guarda el error que sucedió, y para acceder a el solo debemos imprimirlo. 
+Para el manejo de errores se utilizan las sentencias `try-catch`, donde el argumento de `catch` debe ser el nombre de la variable, está guarda el error que sucedió, y para acceder a el sólo debemos imprimirlo. 
 
 Se pueden crear error con la palabra reservada `throw` seguida de lo que queremos lanzar como error. 
 

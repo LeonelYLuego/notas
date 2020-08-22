@@ -4,7 +4,7 @@
 - __Staging area:__ es el área de preparación, es acá donde se almacenan todo antes de hacer un commit (confirmar cambios).
 - __Git Repository:__ es el repositorio en donde se almacenan los cambios del proyecto.
 
-## Identificarnos
+## Identificarse
 
 `git config --global user.name "nombre"`
 

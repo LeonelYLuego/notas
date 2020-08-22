@@ -17,14 +17,13 @@
 `<hr>` Define una ruptura temática en una página HTML, y más a menudo se muestra como una línea horizontal.
 
 <hr>
-
-`<i></i>` Italic, define un fragmento de texto que destaca respecto el texto normal por alguna razón. Normalmente se muestra en *cursiva*.
+`<i></i>` Italic, define un fragmento de texto que destaca respecto al texto normal por alguna razón. Normalmente se muestra en *cursiva*.
 
 `<kbd></kbd>` Representa una <kbd>entrada</kbd> del usuario. Normalmente se visualiza mediante un tipo de letra monoespacio.
 
 `<mark></mark>` Define un texto <mark>resaltado</mark> por su especial relevancia.
 
-`<small></small>` Muestra el texto con un tamaño <small>inferior</small> al tamaño al tamaño normal del texto, se emplea para representar comentario secundarios o "letras pequeña", como un aviso de copyright u otro texto legal, independientemente de su presentación visual.
+`<small></small>` Muestra el texto con un tamaño <small>inferior</small> al tamaño al tamaño normal del texto, se emplea para representar comentarios secundarios o "letras pequeñas", como un aviso de copyright u otro texto legal, independientemente de su presentación visual.
 
 `<sub></sub>` Define letras minúsculas más pequeñas y por <sub>debajo</sub> de la línea base de texto.
 
@@ -36,7 +35,7 @@
 
 Ejemplo: `<var>E</var> = <var>mc</var><sup>2</sup>` <var>E</var> = <var>mc</var><sup>2</sup> 
 
-`<del></del>` Define un fragmento de texto que ha sido eliminado de la página. Normalmente se representa <del>tachado</del> con una line horizontal.
+`<del></del>` Define un fragmento de texto que ha sido eliminado de la página. Normalmente se representa <del>tachado</del> con una línea horizontal.
 
 `<bdi></bdi>` Aísla un fragmento de texto que se puede que se puede formatear en una dirección distinta respecto al resto de texto.
 
@@ -52,7 +51,7 @@ Ejemplo: `<var>E</var> = <var>mc</var><sup>2</sup>` <var>E</var> = <var>mc</var>
 
 `<data></data>` Relacionada el contenido de un dato destinado a ser procesado por el ordenador.
 
-`<dfn></dfn>` Representa la definición de un termino.
+`<dfn></dfn>` Representa la definición de un término.
 
 `<em></em>` Enfatiza un texto asignándoles una mayor importancia. Los elementos `<em>` se pueden anidar, cada nivel de anidamiento indica un mayor grado de énfasis. Normalmente se muestra en *cursiva*.  
 
@@ -74,11 +73,11 @@ Ejemplo: `<var>E</var> = <var>mc</var><sup>2</sup>` <var>E</var> = <var>mc</var>
 
 ## Citas
 
-`<cite></cite>` Representación de una cita a un trabajo creativo. Debe incluir el titulo o la URL de la referencia al trabajo.
+`<cite></cite>` Representación de una cita a un trabajo creativo. Debe incluir el título o la URL de la referencia al trabajo.
 
-`<q></q>` Quote, representa una cita corta que no incluye saltos de línea. Para las citas largas que puedan incluir saltos de línea se debe utilizar `<blockquote>`, que es un elemento de bloque. 
+`<q></q>` Quote, representa una cita corta que no incluye saltos de línea. Para las citas largas que puedan incluir saltos de línea se debe utilizar `<blockquote>`, qué es un elemento de bloque. 
 
-`<blockquote></blockquote>` Bloque que define una cita larga que puede ocupar múltiple líneas.
+`<blockquote></blockquote>` Bloque que define una cita larga que puede ocupar múltiples líneas.
 
 - cite="" establece de donde viene la cita.
 
@@ -90,9 +89,9 @@ Ejemplo: `<var>E</var> = <var>mc</var><sup>2</sup>` <var>E</var> = <var>mc</var>
 
 `&lg;` Carácter `>`.
 
-`&#ddd;` d es un numero decimal que representa el carácter que queremos mostrar.
+`&#ddd;` d es un número decimal que representa el carácter que queremos mostrar.
 
-`&#xdd;` D es un numero hexadecimal que representa el carácter que queremos mostrar.
+`&#xdd;` D es un número hexadecimal que representa el carácter que queremos mostrar.
 
 `&aaaa;` Referencia a entidad de carácter.
 

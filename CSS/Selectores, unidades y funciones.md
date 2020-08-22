@@ -30,13 +30,13 @@
 | `E::after`              | Contenido generado después del elemento E                    |
 | `E[foo^="bar"]`         | Un elemento E que tiene un atributo foo cuyo valor comienza exactamente con la cadena "bar" |
 | `E[foo$="bar"]`         | Un elemento E que tiene un atributo foo cuyo valor finaliza exactamente con la cadena "bar" |
-| `E[foo*="bar"]`         | Un elemento E que tiene un atributo foo cuyo valor contiene la sucadena "bar" |
+| `E[foo*="bar"]`         | Un elemento E que tiene un atributo foo cuyo valor contiene la subcadena "bar" |
 | `E:root`                | Un elemento raíz del documento                               |
 | `E:nth-child(n)`        | Un elemento E, el hijo n de su padre                         |
 | `E:nth-last-child(n)`   | Un elemento E, el hijo n de su padre contando desde el último |
 | `:nth-of-type(n)`       | Un elemento E, el hermano n de su tipo                       |
 | `E:nth-of-last-type(n)` | Un elemento E, el hermano n de su tipo contando desde el último |
-| `E:last-child`          | Un elemento E, el último hijo de se padre                    |
+| `E:last-child`          | Un elemento E, el último hijo de su padre                    |
 | `E:first-of-type`       | Un elemento E, el primer hermano de su tipo                  |
 | `E:last-of-type`        | Un elemento E, el último hermano de su tipo                  |
 | `E:only-child`          | Un elemento E, el único hijo de su padre                     |
@@ -49,7 +49,7 @@
 | `E:not(s)`              | Un elemento E que no cumple el selector simple s             |
 | `E ~ F`                 | Un elemento F precedido por un elemento E hermano            |
 | `E:in-range`            | Un elemento E de tipo input en el rango                      |
-| `E: invalid`            | Un elemento E de tipico input con un valor inválido          |
+| `E: invalid`            | Un elemento E de típico input con un valor inválido          |
 | `E:optional`            | Un elemento E de tipo input que no tiene el atributo #required |
 | `E:out-of-range`        | Un elemento E de tipo input que está fuera de rango          |
 | `E:traget`              | Un elemento E activo actual (se hace clic en una URL que contiene el nombre de ancla |
@@ -114,4 +114,4 @@ input[type = "text"]{
 
 `counter()` devuelve el valor del contador indicado. 
 
-`calc()` realiza un cálculo aritmético. admite alguno de estos cincos operadores: suma `+`, resta `-`, divisón `/` y módulo de la división `mod`. 
+`calc()` realiza un cálculo aritmético. admite alguno de estos cincos operadores: suma `+`, resta `-`, división `/` y módulo de la división `mod`. 

@@ -18,7 +18,7 @@ Se especifica con las etiquetas: `<img/>`.
 - `<source></source>` Referencia a una fuente de imagen. 
   - `media="(min-width: 650px")` tamaño mínimo para utilizar esa imagen. 
   - `srcset="" url de la imagen` 
-- `<img>` Ultimo elemento, es utilizado por los navegadores que no soportan `<picture>` 
+- `<img>` Último elemento, es utilizado por los navegadores que no soportan `<picture>` 
 
 `<figure></figure>` utilizada como bloque donde pondremos alguna figura. 
 
@@ -43,7 +43,7 @@ Para indicar las áreas donde están los puntos para hacer click se utiliza la e
   - circle circulo 
   - poly región poligonal 
   - default toda la imagen 
-- `coords=""` recibe las cordenas de la figura, en el caso del circulo recibe la posición y el radio. 
+- `coords=""` recibe las coordenadas de la figura, en el caso del círculo recibe la posición y el radio. 
 
  
 

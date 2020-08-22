@@ -16,13 +16,13 @@
 
 `git tag <etiqueta>`agrega una etiqueta al commit. Ejemplo: "version 1".
 
-`git tag <etiqueta> <número de commit>` agregar la etiquta al commit especificado.
+`git tag <etiqueta> <número de commit>` agregar la etiqueta al commit especificado.
 
 `git checkout <etiqueta>` moverse en el tiempo al commit de la etiqueta.
 
 ## Ignorar archivos
 
-Para ignorar archivos se crea el archivo .gitignore que especifica las rutas de archivos a ingnorar.
+Para ignorar archivos se crea el archivo .gitignore que especifica las rutas de archivos a ignorar.
 
 `hola.cpp` ignora el archivo.
 

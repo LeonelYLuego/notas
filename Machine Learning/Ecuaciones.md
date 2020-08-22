@@ -27,7 +27,7 @@ $$
   $$
 
 - h es la función de predicción del sistema, también llamada hipótesis. Cuando el sistema recibe el vector de características de una instancia $X^{(i)}$ genera un valor predicho $\hat{y}^{(i)} = h(X^{(i)})$ para esa instancia ($\hat{y}$ se pronuncia "y-hat").
-- $RMSE(X, h)$ es la función d ecosto medida en el conjunto de ejemplos usando su hipótesis $h$.
+- $RMSE(X, h)$ es la función de costo medida en el conjunto de ejemplos usando su hipótesis $h$.
 
 ## Error absoluto medio
 

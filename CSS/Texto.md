@@ -14,7 +14,7 @@
 - `none` no produce ninguna decoración del texto. 
 - `underline` el texto es subrayado. 
 - `overline` el texto tiene una línea encima. 
-- `line-through` el texto tiene una línea por el medo(tachado) 
+- `line-through` el texto tiene una línea por el medio (tachado) .
 - `blink` el texto parpadea. 
 
 `text-transform:` se utiliza para especificar letras mayúsculas y minúsculas en un texto. 
@@ -38,13 +38,13 @@
 
 `text-aling-last:` define la alineación de la última línea de un bloque de texto como un párrafo. 
 
-`white-space:` indica como tratar los espacios en blanco dentro de un elemento. 
+`white-space:` indica cómo tratar los espacios en blanco dentro de un elemento. 
 
-- `normal` los saltos de línea se indican con la etiqueta <br> y las líneas se cortan automáticamente para ajustar el ancho disponible. 
+- `normal` los saltos de línea se indican con la etiqueta `<br>` y las líneas se cortan automáticamente para ajustar el ancho disponible. 
 - `pre` los saltos de línea se producen por los saltos de línea que contenga el texto y las líneas no se cortan automáticamente. 
 - `nowrap` similar al comportamiento normal, pero las líneas no se cortan automáticamente. 
 
-`text-overflow:` especifica como el contenido desbordado debe mostrarse al usuario. 
+`text-overflow:` específica como el contenido desbordado debe mostrarse al usuario. 
 
 - `clip` cortado 
 - `ellipsis` puntos suspensivos. 
@@ -60,7 +60,7 @@
 En CSS, hay dos tipo de nombres de la familia de fuentes: 
 
 - Genérica de la familia: un grupo de familias de fuentes con un aspecto similar. 
-- La fuente de la familia: un familia de fuentes específicas. 
+- La fuente de la familia: una familia de fuentes específicas. 
 
 `font-family:` especifica el tipo de letra. se separa por comas el orden que deberá de tomar el navegador las fuentes en caso de no encontrarlas. 
 

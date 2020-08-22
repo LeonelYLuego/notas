@@ -63,7 +63,7 @@ Una matriz se declara:
 var nombre = new Array("primer elemento", "segundo elemento");
 var nombre = ["primer elemento", "segundo elemento"];
 
-nombre[0]; //Acceder a los datos de una matiz
+nombre[0]; //Acceder a los datos de una matriz
 ~~~
 
 Se puede crear un Array con n elementos: 
@@ -84,7 +84,7 @@ var points = new Array(40);
 
 `.concat(matiz)` concatena dos matrices, agregando después de la primera, la segunda. 
 
-`.join(cadena)` permite unir todos los elemento de una matriz en una cadena alfanumérica, separados por la cadena. 
+`.join(cadena)` permite unir todos los elementos de una matriz en una cadena alfanumérica, separados por la cadena. 
 
 `.pop()` se usa para eliminar el último elemento de la matriz. 
 
@@ -100,7 +100,7 @@ var points = new Array(40);
 
 `.splice(inicio, número de celdas a eliminar, valor nuevo 1, valor nuevo n)`
 
-`.sort()` ordena los datos de la matiz. 
+`.sort()` ordena los datos de la matriz. 
 
 Para agregar un nuevo método a las matrices:
 
@@ -147,7 +147,7 @@ Una cadena se declara:
 var miCadena = new String(valor_literal);
 ~~~
 
-Cadena de 3 digitos:
+Cadena de 3 dígitos:
 
 ~~~javascript
 var a = /\d\d\d/;
@@ -157,11 +157,11 @@ var a = /\d\d\d/;
 
 `.length` obtiene el número de caracteres de la cadena. 
 
-`.link(referencia)` crea un nuevo vinculo hacía una página. 
+`.link(referencia)` crea un nuevo vínculo hacía una página. 
 
 `.big()` hace el texto más grande. 
 
-`.blink()` hace que le texto parpadee. 
+`.blink()` hace que el texto parpadee. 
 
 `.bold()` pone el texto en negritas. 
 
@@ -181,7 +181,7 @@ var a = /\d\d\d/;
 
 `.sup()` pone la letra como superíndice. 
 
-`.indexOf(cadena, inicio)` busca el primer índice que coincida con la cadena. Regresa -1 cuando no lo encuentra. El argumento inicio indica el índice en que comenzará a buscar. 
+`.indexOf(cadena, inicio)` busca el primer índice que coincida con la cadena. Regresa -1 cuando no lo encuentra. El argumento inicial indica el índice en que comenzará a buscar. 
 
 `.lastIndexOf(cadena)` busca el último índice que coincida con la cadena. 
 
@@ -205,7 +205,7 @@ var a = /\d\d\d/;
 
 `.search(cadena)` busca una cadena en la cadena, si la encuentra regresa su posición, sino, regresa -1. 
 
-`.replace(cadena, remplazo)` busca la cadena en la cadena y la remplaza con en remplazo. 
+`.replace(cadena, remplazo)` busca la cadena en la cadena y la reemplaza con en reemplazo. 
 
 `escape(cadena)` Convierte una cadena de texto normal en una cadena que pueda ser manejada por JavaScript. 
 
@@ -274,7 +274,7 @@ var a = /\d\d\d/;
 
 `Math.atan(n)` arco tangente. 
 
-`Math.atan2(x,y)` arco tangente de un punto determinado por las cordenadas. 
+`Math.atan2(x,y)` arco tangente de un punto determinado por las coordenadas. 
 
 `Math.ceil(n)` redondeo de n al entero superior. 
 
@@ -308,7 +308,7 @@ Para declarar un objeto tipo fecha y obtener la fecha exacta de ese momento:
 var fecha = new Date();
 ~~~
 
-Si se quiere crear una fecha especifica, se debe crear con el constructor del objeto: 
+Si se quiere crear una fecha específica, se debe crear con el constructor del objeto: 
 
 ~~~javascript
 var fecha = new Date(año, mes, día, hora, minuto, segundo, milisegundo);

@@ -50,9 +50,9 @@
 
 `location.protocol`, `location.hostname`, `location.port`, `location.hash` 
 
-`location.reload(variable)` recarga la página, si la variable es false se recarga desde la cache, si es true se recarga desde el servidor. 
+`location.reload(variable)` recarga la página, si la variable es `false` se recarga desde la cache, si es true se recarga desde el servidor. 
 
-`location.replace("URL")` remplaza la página que se va a cargar por una más apropiada, solo funciona cuando la página está cargando. 
+`location.replace("URL")` reemplaza la página que se va a cargar por una más apropiada, solo funciona cuando la página está cargando. 
 
 `history.back()` retrocede una página. 
 
@@ -68,7 +68,7 @@ function figura(num_lados){
 }
 ~~~
 
-Para agregar métodos al objetos primero debemos crear una función que haga lo que queremos que haga el objeto, haciendo referencia a los atributos con la palabra reservada `this.nombre_del_atributo`, después con la propiedad `nombre_del_objeto.prototype.nombre_del_metodo` lo igualamos a la función que acabamos de crear. Por ejemplo: 
+Para agregar métodos al objeto primero debemos crear una función que haga lo que queremos que haga el objeto, haciendo referencia a los atributos con la palabra reservada `this.nombre_del_atributo`, después con la propiedad `nombre_del_objeto.prototype.nombre_del_metodo` lo igualamos a la función que acabamos de crear. Por ejemplo: 
 
 ~~~javascript
 function area(){

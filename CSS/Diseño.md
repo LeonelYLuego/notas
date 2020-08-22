@@ -45,7 +45,7 @@
 - `padding-box` el fondo está pintado hasta el borde exterior del relleno. 
 - `content-box` el fondo está pintado hasta el cuadro del contenido. 
 
-`background-origin:` especifica donde se ubica las imágenes de fondo. 
+`background-origin:` especifíca donde se ubica las imágenes de fondo. 
 
 - `border-box` la imagen de fondo se inicia desde la esquina superior izquierda del borde. 
 - `padding-box` la imagen de fondo se inicia desde la esquina superior izquierda del relleno. 
@@ -53,7 +53,7 @@
 
 ## Opacidad y transparencia 
 
-`opacity:` especifica la opacidad y trasparencia de un elemento, puede tomar valores desde 0 a 1. 
+`opacity:` especifica la opacidad y transparencia de un elemento, puede tomar valores desde 0 a 1. 
 
 ## Sombras 
 
@@ -64,13 +64,13 @@ Las sombras se pueden agregar con las propiedades `text-shadow` y `box-shadow`, 
 - blur (desenfoque) en px. 
 - color. 
 
-Se pueden agregar múltiples sombras separadas por una coma, también se puede generar con la propiedad un borde al rededor del textos. 
+Se pueden agregar múltiples sombras separadas por una coma, también se puede generar con la propiedad un borde alrededor del textos. 
 
 ## Estilos de diseño 
 
-Diseño fijo: la anchura del contenido se la página y de los diferentes componentes de la página se especifican con unidades de medidas absolutas, normalmente pixel. 
+Diseño fijo: la anchura del contenido de la página y de los diferentes componentes de la página se especifican con unidades de medidas absolutas, normalmente píxel. 
 
-Diseño liquido: la anchura de los componentes de la página se especifica mediante porcentajes respecto a la anchura de la ventana del navegador. 
+Diseño líquido: la anchura de los componentes de la página se especifica mediante porcentajes respecto a la anchura de la ventana del navegador. 
 
 Diseño elástico: la anchura de los componentes de la página se especifica en unidades relativas respecto al tamaño del texto. 
 

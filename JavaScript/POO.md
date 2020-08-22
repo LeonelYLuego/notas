@@ -41,11 +41,11 @@ class Model extends Car{
 }
 ~~~
 
-Dentro del contructor de la clase hija se debe ejecutar el constructor de la clase padre, para ello se utiliza el método `super()` que hace referencia al constructor de la clase padre. 
+Dentro del constructor de la clase hija se debe ejecutar el constructor de la clase padre, para ello se utiliza el método `super()` que hace referencia al constructor de la clase padre. 
 
 ## Get y Set 
 
-Se pueden crear métodos que se escriban como atributos, estos pueden obtener un valor o retornarlo, para ello utilizan las palabras reservadas set y get, se utilizan de la siguiente manera: 
+Se pueden crear métodos que se escriban como atributos, estos pueden obtener un valor o retornarlo, para ello utilizan las palabras reservadas `set` y `get`, se utilizan de la siguiente manera: 
 
 ~~~javascript
 class Car{

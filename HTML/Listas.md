@@ -26,7 +26,7 @@ Los elementos `<li></li>` están dentro de las etiquetas `<ol></ol>`.
   - a 
   - I 
   - i 
-- `start=""` indica en que número o letra comenzar. 
+- `start=""` indica en qué número o letra comenzar. 
 
 #### Ejemplo:
 
@@ -36,8 +36,8 @@ Los elementos `<li></li>` están dentro de las etiquetas `<ol></ol>`.
 </ol> 
 ~~~
 
-## Lista de difinición
-Las definiciones está dentro de las etiquetas `<dl></dl>`, donde la palabra a definir se coloca entre las etiquetas `<dt></dt>` y su definición entre `<dd></dd>`.
+## Lista de definición
+Las definiciones están dentro de las etiquetas `<dl></dl>`, donde la palabra a definir se coloca entre las etiquetas `<dt></dt>` y su definición entre `<dd></dd>`.
 
 #### Ejemplo:
 

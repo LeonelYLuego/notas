@@ -12,6 +12,6 @@ Los atributos proporcionan información adicional sobre los elementos HTML.
 - `title=""` muestra como consejo al pasar el ratón sobre el párrafo. 
 - `disabled=""` especifica que un elemento de entrada debe ser deshabilitado. 
 - `id=""` especifica un identificador a un elemento. 
-- `class=""` especifica una clase que puede ser utilizado en varios elementos. 
+- `class=""` especifica una clase que puede ser utilizada en varios elementos. 
 
 Las comillas dobles alrededor de valores de atributos son las más comunes en HTML.

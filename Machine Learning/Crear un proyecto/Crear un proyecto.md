@@ -5,7 +5,7 @@ Para crear un proyecto de Machine Learning se recomienda seguir los siguientes p
 1. Mirar el panorama general
 2. Obtener los datos
 3. Descubrir y visualizar los datos para obtener información
-4. Preparar los datos para el algoritmo de Machin Learning
+4. Preparar los datos para el algoritmo de Machine Learning
 5. Seleccionar un modelo y capacitarlo
 6. Afinar el modelo
 7. Presentarlo
@@ -31,7 +31,7 @@ Cuando se quiere aprender Machine Learning es preferible trabajar con datos del 
   - [Quora.com](https://www.quora.com/Where-can-I-find-large-datasets-open-to-the-public)
   - [El subreddit de conjuntos de datos](https://www.reddit.com/r/datasets)
 
-## Mirar la imagen completa
+## Mirar la imágen completa
 
 ### Enmarcar el problema
 
@@ -53,7 +53,7 @@ Se debe seleccionar una fórmula de medida de rendimiento para ver que tan bueno
 
 Se pueden ver el archivo [ecuaciones](./Ecuaciones.md).
 
-### Verificar qué se quiere en la salida del modelo
+### Verificar que se quiere en la salida del modelo
 
 Es importante saber que es lo que se espera en la salida, ya que calcular datos de salida que no son los esperados podría hacernos regresar al principio.
 
@@ -73,7 +73,7 @@ Si se trabaja con la librería `pandas` puede utilizar las siguientes funciones 
 
 `data.info()` muestra una descripción rápida de los datos.
 
-`data["column"].value_counts()` cuenta cuantos valores hay en cada categoría de la columna.
+`data["column"].value_counts()` cuenta cuántos valores hay en cada categoría de la columna.
 
 `data.describe()` obtiene la cantidad de datos, el promedio, la desviación estándar, el valor mínimo, máximo y los 3 percentiles.
 
@@ -83,7 +83,7 @@ El vistazo rápido a los datos sirve para detectar cosas en ellos y para entende
 
 ### Crear un conjunto de prueba
 
-Antes de empezar a analizar más los dato hay que hacer un conjunto de pruebas y entrenamiento y dejar el conjunto de pruebas a un lado para después utilizarlo para medir que tan bueno es nuestro sistema.
+Antes de empezar a analizar más los datos hay que hacer un conjunto de pruebas y entrenamiento y dejar el conjunto de pruebas a un lado para después utilizarlo para medir qué tan bueno es nuestro sistema.
 
 Se puede generar una función para obtener el conjunto de prueba aleatoria-mente:
 
@@ -151,26 +151,26 @@ for set_ in (strat_train_set, strat_test_set):
 
 ## Descubrir y visualizar los datos para obtener información
 
-Ahora se profundizará más en los datos, dejando de lado el conjunto de pruebas, se crea una copio del conjunto de entrenamiento para no dañarlo.
+Ahora se profundizará más en los datos, dejando de lado el conjunto de pruebas, se crea una copia del conjunto de entrenamiento para no dañarlo.
 
 En esta etapa se pueden graficar los datos para entenderlos mejor.
 
 ### Buscar correlaciones
 
-Cuando el conjunto de datos no es demasiado grande se puede calcular fácilmente el coeficiente de correlación estándar (también llamado R de Pearson) entre cada par de atributos usando le método `corr()`
+Cuando el conjunto de datos no es demasiado grande se puede calcular fácilmente el coeficiente de correlación estándar (también llamado R de Pearson) entre cada par de atributos usando el método `corr()`
 
 ~~~python
 corr_matrix = housing.corr()
 corr_matrix["median_house_value"].sort_values(ascending=False)
 ~~~
 
-El coeficiente de correlación oscila entre -1 y 1. Cuando está cerca de 1 significa que existe una fuerte correlación positiva, cuando el coeficiente de correlación está cerca de -1 significa que hay una fuerte correlación negativa, finalmente los coeficientes cercanos a 0 significa que no ha correlación lineal.
+El coeficiente de correlación oscila entre -1 y 1. Cuando está cerca de 1 significa que existe una fuerte correlación positiva, cuando el coeficiente de correlación está cerca de -1 significa que hay una fuerte correlación negativa, finalmente los coeficientes cercanos a 0 significa que no hay correlación lineal.
 
 ![coeficiente de correlación](cof_correlacion.png)
 
 El coeficiente de correlación sólo mide correlaciones lineales (si X sube, entonces Y generalmente sube/baja).
 
-Otra forma de verificar la correlación entre los atributo es usando el método `scatter_matrix()` que traza cada atributo numérico con cada otro atributo numérico.
+Otra forma de verificar la correlación entre los atributos es usando el método `scatter_matrix()` que traza cada atributo numérico con cada otro atributo numérico.
 
 ~~~python
 from pandas.plotting import scatter_matrix
@@ -198,7 +198,7 @@ Para preparar los datos para el algoritmo de Machine Learning  se recomienda hac
 - Esto permite reproducir estas transformaciones fácilmente en cualquier conjunto de datos.
 - Se creará gradualmente una biblioteca de funciones de transformación que se podrá reutilizar en futuros proyectos.
 - Se puede usar estas funciones en un sistema en vivo para transformar los nuevos datos antes de alimentar el algoritmo.
-- Esto permitirá probar fácilmente varias transformaciones y ver qué combinaciones de transformaciones funciona mejor.
+- Esto permitirá probar fácilmente varias transformaciones y ver qué combinaciones de transformaciones funcionan mejor.
 
 Primero se deben limpiar los datos de entrenamiento separando los valores de predicción con las etiquetas.
 
@@ -213,7 +213,7 @@ Si uno de los atributos tiene valores faltantes (nulos) hay tres opciones:
 
 1. Deshacerse de los distritos correspondientes.
 2. Deshacerse de todo el atributo.
-3. Estableces los valores con algún otro valor (cero, media, mediana, etc.).
+3. Establecer los valores con algún otro valor (cero, media, mediana, etc.).
 
 ~~~python
 housing.dropna(subset=["total_bedrooms"]) #opción 1
@@ -249,7 +249,7 @@ print(imputer.statistics_)
 print(housing_num.median().values)
 ~~~
 
-Ahora se puede usar este "entrenado" `imputer` para transformar el conjunto de entrenamiento reemplazando loa valores faltantes con las medianas aprendidas.
+Ahora se puede usar este "entrenado" `imputer` para transformar el conjunto de entrenamiento reemplazando los valores faltantes con las medianas aprendidas.
 
 ~~~python
 X = imputer.transform(housing_num)
@@ -258,7 +258,7 @@ housing_tr = pd.DataFrame(X, columns=housing_num.colums, index=housing_num.index
 
 ### Manejo de texto y atributos categóricos
 
-En en conjunto de datos puede haber texto no arbitrario: hay un número limitado de valores posibles, cada uno de los cuales representa una categoría, entonces ese atributo es un atributo categórico. La mayoría de algoritmos de Machine Learning prefieren trabajar con números, por lo que ha que convertir las categorías de texto a números. Para esto se puede utilizar la clase `sklearn.preprocessing.OrdinalEncoder`.
+En el conjunto de datos puede haber texto no arbitrario: hay un número limitado de valores posibles, cada uno de los cuales representa una categoría, entonces ese atributo es un atributo categórico. La mayoría de algoritmos de Machine Learning prefieren trabajar con números, por lo que hay que convertir las categorías de texto a números. Para esto se puede utilizar la clase `sklearn.preprocessing.OrdinalEncoder`.
 
 ~~~python
 from sklearn.preprocessing import OrdinalEncoder
@@ -283,7 +283,7 @@ print(housing_cat_1hot.toarray())
 print(cat_encoder.categories_)
 ~~~
 
-Si un atributo categórico tiene una gran cantidad de categorías posibles, la codificación de un solo resultado dará como resultado una gran cantidad de características de entrada. Esto puede ralentizar el entrenamiento y degradar el rendimiento. Si esto sucede, es posible que se desee remplazar la entrada categórica con características numéricas útiles relacionadas con las categorías. Alternativamente se puede reemplazar cada categoría con un vector aprendible de baja dimensión llamado incrustación. La representación de cada categoría se aprendería durante el entrenamiento.
+Si un atributo categórico tiene una gran cantidad de categorías posibles, la codificación de un solo resultado dará como resultado una gran cantidad de características de entrada. Esto puede ralentizar el entrenamiento y degradar el rendimiento. Si esto sucede, es posible que se desee reemplazar la entrada categórica con características numéricas útiles relacionadas con las categorías. Alternativamente se puede reemplazar cada categoría con un vector aprendible de baja dimensión llamado incrustación. La representación de cada categoría se aprendería durante el entrenamiento.
 
 ### Transformadores personalizados
 
@@ -314,10 +314,10 @@ housing_extra_attribs = attr_adder.transform(housing.values)
 
 ### Escalado de funciones
 
-Una de las transformaciones más importantes que se debe aplicar a los datos es el escalado de características, los algoritmos de Machine Learning no funcionan bien cuando los atributos numéricos de entrada tienen escalas muy diferentes. Hay dos formas de hacer que todos los atributos tengan la misma escala: _normalización_, _estadarización_.
+Una de las transformaciones más importantes que se debe aplicar a los datos es el escalado de características, los algoritmos de Machine Learning no funcionan bien cuando los atributos numéricos de entrada tienen escalas muy diferentes. Hay dos formas de hacer que todos los atributos tengan la misma escala: _normalización_, _estandarización_.
 
-- La normalización es el más simple: los valores se desplazan y reescalan para que terminen en un rango de 0 a 1. Esto se hace restando el valor mínimo y dividiendo por el máximo menos el mínimo. Scikit-Learn proporciona un transformador llamado `MinMaxScaler` para esto.
-- La estandarización es diferente: primero se resta el valor medio, y luego se divide por la desviación estandar para que la distribución tenga una varianza unitaria. Sckit-Learn proporciona un transformador llamado `StandarScaler` para la estandarización.
+- La normalización es la más simple: los valores se desplazan y reescalar para que terminen en un rango de 0 a 1. Esto se hace restando el valor mínimo y dividiendo por el máximo menos el mínimo. Scikit-Learn proporciona un transformador llamado `MinMaxScaler` para esto.
+- La estandarización es diferente: primero se resta el valor medio, y luego se divide por la desviación estándar para que la distribución tenga una varianza unitaria. Sckit-Learn proporciona un transformador llamado `StandarScaler` para la estandarización.
 
 La estandarización no limita los valores a un rango específico, lo que puede ser un problema para algunos algoritmos, por ejemplo las redes neuronales a menudo esperan un valor de entrada que varía de 0 a 1. Sin embargo, la estandarización se ve mucho menos afectada por los valores atípicos.
 
@@ -374,7 +374,7 @@ lin_rmse = np.sqrt(lin_mse)
 print(lin_rmse)
 ~~~
 
-También se puede entrenar un modelo de árbol de desición.
+También se puede entrenar un modelo de árbol de decisión.
 
 ~~~python
 from sklearn.tree import DecisionTreeRegressor
@@ -390,7 +390,7 @@ print(tree_rmse)
 
 ### Mejor evaluación usando validación cruzada
 
-Una forma de evaluara el modelo del árbol de decisión y el modelo de regresión es utilizando la función `train_test_split()` para crear con el conjunto de entrenamiento un conjunto de validación.
+Una forma de evaluar el modelo del árbol de decisión y el modelo de regresión es utilizando la función `train_test_split()` para crear con el conjunto de entrenamiento un conjunto de validación.
 
 Una gran alternativa es usar la característica de Scikit-Learn K-fold cross-validation dividiendo el conjunto de entrenamiento en 10 subconjuntos distintos llamados pliegues, luego entrenando y evaluando el modelo de árbol de decisión 10 veces, eligiendo pliegues diferentes para la evaluación cada vez y entrenando en los otros 9 pliegues. El resultado es una matriz que contiene los 10 puntajes de evaluación.
 
@@ -472,7 +472,7 @@ Si `GridSearchCV` se inicializa con `refit=True`, luego, una vez que encuentra e
 El enfoque de cuadrícula está bien cuando se explora relativamente pocas combinaciones, pero cuando el espacio de búsqueda de hiperparámetros es grande, a menudo es preferible usar `RandomSearchCV` en lugar. Esta clase se puede usar de la misma manera que `GridSearchCV` pero en lugar de probar todas las combinaciones posibles, evalúa un número dado de combinaciones aleatorias seleccionando un valor aleatorio para cada hiperparámetro en cada iteración. Sus beneficios son:
 
 - Si se deja la búsqueda aleatoria ejecute por ejemplo 1000 iteraciones, esta explorará 1000 valores diferentes.
-- Configurando el número de iteraciones se tiene más control sobre el presupuesto de cómputo que desea asignar a la búsqueda de hiperparámetros.
+- Configurando el número de iteraciones se tiene más control sobre el presupuesto de cómputo que se desea asignar a la búsqueda de hiperparámetros.
 
 ### Métodos de conjunto
 
@@ -480,7 +480,7 @@ Otra forma de ajustar el sistema es intentar combinar los modelos que funcionan 
 
 ### Analizar los mejores modelos y sus errores
 
-A menudo se obtendrán buenos conocimientos sobre el problema al inspeccionar los mejores modelos. `RandomForestRegressor` puede indicar la importancia relativa de cada atributo para hace predicciones precisas:
+A menudo se obtendrán buenos conocimientos sobre el problema al inspeccionar los mejores modelos. `RandomForestRegressor` puede indicar la importancia relativa de cada atributo para hacer predicciones precisas:
 
 ~~~python
 feature_importances = grid_search.best_estimator_.feature_importances_
@@ -497,7 +497,7 @@ attributes = num_attribs + extra_attribs + cat_one_hot_attribs
 print(sorted(zip(feature_importance, attributes), reverse=True))
 ~~~
 
-Con la información se puede intentar eliminar algunas características menos útiles. También se puede observar los errores específicos que comete el sistema, luego se puede tratar de entender por qué los comete y qué puede solucionar el problema. 
+Con la información se puede intentar eliminar algunas características menos útiles. También se puede observar los errores específicos que comete el sistema, luego se puede tratar de entender por qué los comete y que puede solucionar el problema. 
 
 ### Evaluar el sistema en el conjunto de prueba
 
@@ -518,7 +518,7 @@ final_rmse = np.sqrt(final_mse)
 print(final_rmse)
 ~~~
 
-En algunos casos, tal estimación puntual del error de generalización no será suficiente para convencer de lanzar el modelo: ¿qué para si es sólo un 0.1% mejor que el modelo actual en producción? Es posible que se desee tener una idea de cuán precisa es esta estimación. Para esto se puede calcular un 95% de intervalo de confianza para el error de generalización usando `scipy.stats.t.interval()`
+En algunos casos, tal estimación puntual del error de generalización no será suficiente para convencer de lanzar el modelo: ¿qué pasa si es sólo un 0.1% mejor que el modelo actual en producción? Es posible que se desee tener una idea de cuán precisa es esta estimación. Para esto se puede calcular un 95% de intervalo de confianza para el error de generalización usando `scipy.stats.t.interval()`
 
 ~~~python
 from scipy import stats
@@ -538,15 +538,15 @@ Antes de lanzar el sistema se debe documentar:
 - Las suposiciones que se hicieron
 - Las limitaciones del sistema
 
-## Inciar, monitorear y mantener el sistema
+## Iniciar, monitorear y mantener el sistema
 
-Ahora se debe guardar el modelo y realizar la documentación del modelo, una vez hecho eso se puede implementar el modelo en el entorno de producción y usarlo con la método `predict()`.
+Ahora se debe guardar el modelo y realizar la documentación del modelo, una vez hecho eso se puede implementar el modelo en el entorno de producción y usarlo con el método `predict()`.
 
 Pero el despliegue del modelo no es el final de la historia, también se debe escribir un código de monitoreo para verificar el rendimiento en vivo del sistema a intervalos regulares y activar alertas cuando se caiga.
 
 Incluso un modelo entrenado para clasificar imágenes de perros y gatos puede necesitar ser reentrenado regularmente, no porque los gatos y los perros muten durante la noche, sino porque las cámaras siguen cambiando, junto con los formatos de imagen, nitidez, brillo y proporciones de tamaño.
 
-Para medir si el sistema se está deteriorando se debe establecer una variable que mida que tan efectivo es el modelo, ya sea mediante una encuesta a los usuarios o dentro del mismo sistema. También se debe definir que hacer en caso de que el sistema fallé lo cuál es un trabajo largo el cual se puede automatizar, algunas de las cosas que se puede automatizar son:
+Para medir si el sistema se está deteriorando se debe establecer una variable que mide qué tan efectivo es el modelo, ya sea mediante una encuesta a los usuarios o dentro del mismo sistema. También se debe definir qué hacer en caso de que el sistema falle lo cual es un trabajo largo el cual se puede automatizar, algunas de las cosas que se puede automatizar son:
 
 - Recopilar nuevos datos y etiquetarlos.
 - Escribir un script para entrenar el modelo y ajustar los hiperparámetros automáticamente.

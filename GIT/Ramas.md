@@ -1,6 +1,6 @@
 ## Crear ramas, movernos, eliminarlas
 
-`git branch` para ver las ramas. Con el asterisco podemos saber en que rama estamos.
+`git branch` para ver las ramas. Con el asterisco podemos saber en qué rama estamos.
 
 `git branch <nombre de la rama>` crear una nueva rama.
 
@@ -16,4 +16,4 @@
 
 ## Fusionar ramas
 
-`git merge <nombre de la rama>` agrega los cambio de la rama especificade en la rama que estamos.
+`git merge <nombre de la rama>` agrega los cambio de la rama especificada en la rama que estamos.

@@ -25,7 +25,7 @@ Un módulo se puede documentar para dar más información acerca de este.
 #!/usr/bin/python3 #Ubicación del archivo
 
 """
-Aquí colocamos todo lo que hace nuestro módulo a que contexto corresponde.
+Aquí colocamos todo lo que hace nuestro módulo a qué contexto corresponde.
 """
 
 __author__ = "Leonel Iván Fernández Carrillo"

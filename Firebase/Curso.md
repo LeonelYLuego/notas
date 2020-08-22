@@ -3,7 +3,7 @@ https://www.youtube.com/watch?v=gsePWTrOCZE&list=PLPl81lqbj-4JiR1Cio6xEygCZDmZmD
 ## Crear un nuevo proyecto
 
 - Abrir la consola.
-- Seleccionar _crear nuevo proyecto_.
+- Seleccionar _crear un nuevo proyecto_.
 - Darle un nombre y seleccionar la región del proyecto.
 - Ir a la ventana de autenticación.
 - En la pestaña superior elegir el método de autenticación.

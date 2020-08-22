@@ -14,7 +14,7 @@ Las cadenas de caracteres pueden llevar comillas simples o dobles: `'Hello'`, `"
 | `str_word_count(string)`              | Regresa el número de palabras que hay en un string.          |
 | `strrev(string)`                      | Voltea un string.                                            |
 | `strpos(string, string)`              | Regresa la posición donde busca el segundo string en el primero. |
-| `str_replace(string, string, string)` | Remplaza el primer string con el segundo en la tercera cadena. |
+| `str_replace(string, string, string)` | Reemplaza el primer string con el segundo en la tercera cadena. |
 
 ## Enteros 
 
@@ -37,7 +37,7 @@ Los flotantes se especifican con un número con punto decimal.
 
 ## Booleano 
 
-Varia entre un estado falso y uno verdadero. 
+Varía entre un estado falso y uno verdadero. 
 
 ## Array 
 

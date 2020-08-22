@@ -12,12 +12,12 @@
 - _tasa de aprendizaje_ parámetro importante de los sistemas de aprendizaje en línea de qué tan rápido deben adaptarse a los datos cambiantes.
 - _valores atípicos_ datos no representativos.
 - _medida de similitud_ que tanta similitud tiene un dato con otro.
-- _función de utilidad_ mide que tan bueno es un model.
-- _función de perdida_ mide que tan malo es un modelo.
+- _función de utilidad_ mide que tan bueno es un modelo.
+- _función de pérdida_ mide que tan malo es un modelo.
 - _inferencia_ aplicar el modelo para hacer predicciones sobre nuevos casos.
 - _ruido de muestreo_ datos no representativos como resultado de casualidad en muestras pequeñas.
 - _sesgo de muestreo_ datos no representativos en muestras muy grandes.
-- _ingenería de características_ crear un buen conjunto de características para entrenar.
+- _ingeniería de características_ crear un buen conjunto de características para entrenar.
 - _generalizar_ hacer predicciones de datos no vistos.
 - _sobreajuste_ el modelo funciona bien en los datos de entrenamiento, pero no generaliza bien.
 - _regularización_ restringir un modelo para simplificarlo y reducir el riesgo de sobreajuste.

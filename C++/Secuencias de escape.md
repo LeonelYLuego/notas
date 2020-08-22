@@ -12,5 +12,5 @@
 | \’      | Comilla simple                                               |
 | \”      | Comilla doble                                                |
 | \\      | Barra invertida (backslash)                                  |
-| \ddd    | Carácter ASCII. Representación octal (d es un digito del 0 al 7) |
-| \xdd    | Carácter ASCII. Representación hexadecimal (d es un digito del 0 al f) |
+| \ddd    | Carácter ASCII. Representación octal (d es un dígito del 0 al 7) |
+| \xdd    | Carácter ASCII. Representación hexadecimal (d es un dígito del 0 al f) |

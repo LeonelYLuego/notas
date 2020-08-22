@@ -63,7 +63,7 @@ my_fuction(valor = ‘Hola’, x = 20, y = True) #Llamada a la función
 
 ## Funciones dentro de funciones
 
-Se pueden crear funciones dentro de funciones con el proposito de utilizar esas funciones dentro de la otra función:
+Se pueden crear funciones dentro de funciones con el propósito de utilizar esas funciones dentro de la otra función:
 
 ~~~python
 def my_fuction(lista de argumentos):

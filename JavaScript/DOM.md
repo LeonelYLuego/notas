@@ -12,7 +12,7 @@ Para las referencias con clases se utiliza `document.getElementsByClassName(clas
 
 Para hacer referencia a los formularios en JavaScript se utiliza `document.forms['name']` con el atributo `name="name"`. 
 
-Para hacer referencia a elemento de un formulario `document.forms['name_form']['name']`. 
+Para hacer referencia a un elemento de un formulario `document.forms['name_form']['name']`. 
 
 Para utilizar los selectores CSS `document.querySelectorAll(selector)`. 
 
@@ -24,7 +24,7 @@ Para utilizar los selectores CSS `document.querySelectorAll(selector)`.
 
 `.style` cambia el estilo de un elemento. 
 
-`.setAttribute(atributo, value)` cambia el valor de un atributo. 
+`.setAttribute(atributte, value)` cambia el valor de un atributo. 
 
 ## Crear y eliminar elementos HTML 
 
@@ -33,7 +33,7 @@ Para utilizar los selectores CSS `document.querySelectorAll(selector)`.
 
 `document.appendChild(element)` añade un elemento HTML. 
 
-`document.repleaceChild(new, old)` remplaza un elemento HTML. 
+`document.repleaceChild(new, old)` reemplaza un elemento HTML. 
 
 `document.wirte(text)` escribe en la secuencia de salida HTML. 
 

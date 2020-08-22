@@ -2,7 +2,7 @@
 
 ## Iframe 
 
-Los iframe se utilizan para mostrar una página dentro de otra pagina web. También pueden cambiar con los enlaces.  Se especifica con `<iframe></iframe>`.
+Los iframe se utilizan para mostrar una página dentro de otra página web. También pueden cambiar con los enlaces.  Se especifica con `<iframe></iframe>`.
 
 - `src=""` dirección de la página a mostrar. 
 - `width=""` ancho de la página. 
@@ -17,7 +17,7 @@ Los iframe se utilizan para mostrar una página dentro de otra pagina web. Tambi
 | `<img src = "/images/picture.jpg">` | En una carpeta en la raíz de la página web. |
 | `<img src = "../picture.jpg">`      | Un nivel encima de la carpeta actual.       |
 
-## Carácteres especiales 
+## Caracteres especiales 
 
 | Resultado | Descripción      | Nombre del carácter | Valor de carácter |
 | --------- | ---------------- | ------------------- | ----------------- |

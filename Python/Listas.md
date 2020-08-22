@@ -6,7 +6,7 @@ Las listas en Python se ponen entre ` []` y se declaran de la siguiente forma:
 my_list = [2, “Tres”, True, [“Uno”, 10]]
 ~~~
 
-Una lista es una array dinamico que puede almacenar cualquier tipo de valor.
+Una lista es un array dinámico que puede almacenar cualquier tipo de valor.
 
 ## Métodos
 
@@ -14,7 +14,7 @@ Una lista es una array dinamico que puede almacenar cualquier tipo de valor.
 
 `my_list[0]` accede al subíndice indicado.
 
-`new_list = my_list[0:4:2]` [valor inicial, cuantos valores se tomaran, salto].
+`new_list = my_list[0:4:2]` [valor inicial, cuantos valores se tomarán, salto].
 
 ### Agregar valores
 

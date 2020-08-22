@@ -43,16 +43,16 @@ La otra manera es descargando la librería e incluyéndola en el archivo HTML.
 | `.append()`                                   | Agrega código después del que hay dentro del elemento.       | Código a poner.                        |
 | `.prepend()`                                  | Agrega código antes del que hay dentro del elemento.         | Código a poner.                        |
 | `.before()`                                   | Agrega código antes del elemento.                            | Código a poner.                        |
-| `.slideDown()`                                | Despliega hacía abajo.                                       | `slow`, `fast`, milisegundos, ninguno. |
-| `.slideUp()`                                  | Despliega hacía arriba.                                      | `slow`, `fast`, milisegundos, ninguno. |
-| `.slideToggle()`                              | Despliega hacía arriba y abajo.                              | `slow`, `fast`, milisegundos, ninguno. |
+| `.slideDown()`                                | Despliega hacia abajo.                                       | `slow`, `fast`, milisegundos, ninguno. |
+| `.slideUp()`                                  | Despliega hacia arriba.                                      | `slow`, `fast`, milisegundos, ninguno. |
+| `.slideToggle()`                              | Despliega hacia arriba y abajo.                              | `slow`, `fast`, milisegundos, ninguno. |
 | `.animatw({parametros}, velocidad, callback)` | Animación.                                                   | `{ left: '250px´, height: '+=10px'}`   |
 | `.stop()`                                     | Detiene una animación.                                       |                                        |
 | `.remove()`                                   | Elimina un elemento.                                         | Selector de los elementos a eliminar.  |
 | `.empty()`                                    | Elimina todos los hijos de un elemento.                      | Ninguno.                               |
 | `.addClass()`                                 | Añade el atributo clase.                                     | Clase.                                 |
 | `.removeClass()`                              | Eliminar el atributo clase.                                  | Clase.                                 |
-| `.toggleClass()`                              | Añado o elimina el atributo clase.                           | Clase.                                 |
+| `.toggleClass()`                              | Añade o elimina el atributo clase.                           | Clase.                                 |
 | `.css()`                                      | Cambia las propiedades CSS o regresa las propiedades.        | Propiedad, valor.                      |
 | `.width()`                                    | Obtiene o cambia la anchura de un elemento.                  | Dimensión.                             |
 | `.height()`                                   | Obtiene o cambia la altura de un elemento.                   | Dimensión.                             |
@@ -66,14 +66,14 @@ La otra manera es descargando la librería e incluyéndola en el archivo HTML.
 | `.children()`                                 | Obtiene todos los hijos del elemento.                        | Ninguno.                               |
 | `.find()`                                     | Obtiene todos los elementos hasta el elemento dado.          | Selector de elemento.                  |
 | `.siblings()`                                 | Obtiene todos los hermanos del elemento o los elementos dados. | Ninguno, selector de elemento.         |
-| `.next()`                                     | Obtiene el elemento hermano siguiente.                       | Ninguno.                               |
+| `.next()`                                     | Obtiene el siguiente elemento hermano.                       | Ninguno.                               |
 | `.nextAll()`                                  | Obtiene todos los elementos hermanos siguientes.             | Ninguno.                               |
 | `.nextUntil()`                                | Obtiene todos los elementos hermanos siguientes hasta el elemento dado. | Selector de elemento.                  |
-| `.prev()`                                     | Obtiene el elemento hermano anteriores.                      | Ninguno.                               |
+| `.prev()`                                     | Obtiene el elemento hermano anterior.                        | Ninguno.                               |
 | `.prevAll()`                                  | Obtiene todos los elementos hermanos anteriores.             | Ninguno.                               |
 | `.prevUntil()`                                | Obtiene todos los elementos hermanos anteriores hasta el elemento dado. | Selector de elemento.                  |
 | `.first()`                                    | Obtiene el primer elemento.                                  | Ninguno.                               |
-| `.last()`                                     | Obtiene el ultimo elemento.                                  | Ninguno.                               |
+| `.last()`                                     | Obtiene el último elemento.                                  | Ninguno.                               |
 | `.eq()`                                       | Obtiene el elemento con el índice especificado.              | Índice.                                |
 | `.filter()`                                   | Obtiene los elementos que coinciden con el selector dado.    | Selector de elemento.                  |
 | `.not()`                                      | Obtiene los elementos que no coincidan con el selector dado. | Selector de elemento.                  |

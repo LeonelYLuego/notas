@@ -24,7 +24,7 @@
 
  `<head></head>` Inicio y final de la cabecera (No visualiza en el contenido de la página), contienen los metadatos de la página. 
 
- `<title></title>` Muestra el titulo (es obligatoria). 
+ `<title></title>` Muestra el título (es obligatorio). 
 
  `<body></body>` Comienzo y final del cuerpo, contenido visible de la página. 
 

@@ -6,7 +6,7 @@ Las cookies son utilizadas para identificar a los usuarios. Para crear una cooki
 
 Para saber si se ha establecido una cookie se utiliza `isset($_COOKIE[$cookie_name])` y para obtener su valor con `$_COOKIE[$cookie_name]`. 
 
-Si se quiere eliminar un cookie se pone una fecha que ya halla pasado. 
+Si se quiere eliminar un cookie se pone una fecha que ya haya pasado. 
 
 ## Sesiones
 

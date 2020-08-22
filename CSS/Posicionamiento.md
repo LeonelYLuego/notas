@@ -8,9 +8,9 @@
 - `inline` el elemento se comporta como un elemento en línea, como `<span></span>`. 
 - `inline-block` se posiciona como un elemento inline, pero se comporta como un block. 
 - `table` el elemento se comporta como una tabla. 
-- `none` el elemento no se visualiza y no participa en la maquetación de la página, se utiliza para ocultar elementos y luego aparecerlos. 
+- `none` el elemento no se visualiza y no participa en la maquetación de la página, se utiliza para ocultar elementos y luego aparecer. 
 
-`visibility:` propiedad que oculta los elementos, pero sigue ocupando un espacio, al contario que `display: none;` que no ocupa un espacio. 
+`visibility:` propiedad que oculta los elementos, pero sigue ocupando un espacio, al contrario que `display: none;` que no ocupa un espacio. 
 
 - `hidden`
 - `visible`
@@ -48,11 +48,11 @@ Si un elemento es más alto que el elemento que lo contiene, y que se hace flota
 
 ## Overflow 
 
-`overflow:` especifica si se recorta el contenido o añadir barras de desplazamiento cuando el contenido de un elemento es demasiado grande para caber en el área especificada. La propiedad solo funciona para elementos de bloque con un altura especificada. 
+`overflow:` especifica si se recorta el contenido o añadir barras de desplazamiento cuando el contenido de un elemento es demasiado grande para caber en el área especificada. La propiedad solo funciona para elementos de bloque con una altura especificada. 
 
-- `visible` el desbordamiento no se recorta. El contenido hace fuera de la caja del elemento. 
+- `visible` el desbordamiento no se recorta. El contenido sale fuera de la caja del elemento. 
 - `hidden` el desbordamiento se recorta, y el resto del contenido será invisible. 
 - `scroll` el desbordamiento se recorta y se agrega una barra de desplazamiento para ver el esto del contenido. 
-- `auto` similar a `scroll`, pera añade barrad de desplazamiento sólo cuando sea necesario. 
+- `auto` similar a `scroll`, pero añade una barra de desplazamiento sólo cuando sea necesario. 
 
 La propiedad existe para los dos ejes: `overflow-x` y `overflow-y`. 

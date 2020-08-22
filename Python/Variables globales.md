@@ -12,4 +12,4 @@ def my_fuction():
 
 Para crear una variable global dentro de una función se hace de la misma manera que se muestra arriba.
 
-**Nota:** para utilizar una variable global dentro de una función es necesario primero declararla antes de utilizarla a menos que la vallamos a declarar adentro de la función.
+**Nota:** para utilizar una variable global dentro de una función es necesario primero declarar antes de utilizarla a menos que la vayamos a declarar dentro de la función.

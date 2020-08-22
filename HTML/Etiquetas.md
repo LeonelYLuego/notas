@@ -20,7 +20,7 @@
 
 `<a>` un enlace o un destino (ancla) para un enlace
 
-`<strong>` énfasis fuerte, mayor que <em>
+`<strong>` énfasis fuerte, mayor que `<em>`
 
 `<em>` énfasis
 

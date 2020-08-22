@@ -35,7 +35,7 @@ include 'nombre_del_fichero';
 require 'nombre_del_fichero';
 ~~~
 
-La diferencia entre `include` y `require` es que si se busca un archivo y no es encontrado include va a proseguir con la ejecución del bloque, mientras que `require` no lo hará. En caso de que no encuentre el archivo se utiliza la sentesia `or die`.
+La diferencia entre `include` y `require` es que si se busca un archivo y no es encontrado `include` va a proseguir con la ejecución del bloque, mientras que `require` no lo hará. En caso de que no encuentre el archivo se utiliza la sentencia `or die`.
 
 ## Archivos 
 

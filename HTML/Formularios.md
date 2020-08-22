@@ -16,13 +16,13 @@ Un formulario `<form></form>` es una entrada de datos por parte del usuario, est
 
 `method=""` especifica el método HTTP para ser utilizado cuando la presentación de los datos de los formularios. 
 
-- `get` los datos serán visible en el campo de dirección de la página. 
+- `get` los datos serán visibles en el campo de dirección de la página. 
   - Anexa forms-datos en la URL en pares de nombre / valor. 
   - La longitud de la URL es limitada (2048 caracteres). 
   - Nunca usar GET para datos sensibles. 
-  - Útil para el envió de datos donde el usuario marca el resultado. 
+  - Útil para el envío de datos donde el usuario marca el resultado. 
 
-- `post` no muestra los datos en el URL. 
+- `post` no muestra los datos en la URL. 
   - No tiene limitaciones de tamaño.
   - No se pueden marcar. 
 
@@ -38,39 +38,39 @@ Un formulario `<form></form>` es una entrada de datos por parte del usuario, est
 
  ## Elementos de un formulario
 
-| Tipo                       | Descripción                                                 | Atributos especiales                                         |
-| -------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------ |
-| `<input type="text">`      | Entrada de texto de una sola línea.                         |                                                              |
-| `<input type="radio">`     | Botón de radio que selecciona una de varias opciones.       | name: nombre que enlaza a los botones, checked: el elemento es seleccionado al iniciar. |
-| `<input type="submit">`    | Botón de envío.                                             | value: texto que aparece en el botón.                        |
-| `<input type="password"> ` | Entrada de texto de una sola línea para una contraseña.     |                                                              |
-| `<input type="reset">`     | Borra todo el contenido de los elementos.                   |                                                              |
-| `<input type="checkbox"> ` | Botón tipo check que puede elegir varias opciones.          | checked: el elemento es seleccionado al iniciar.             |
-| `<input type="color">`     | Paleta de colores.                                          |                                                              |
-| `<input type="date">`      | Selector de fecha.                                          | min, max: restricción de fecha tipo(aaaa-mm-dd).             |
-| `<input type="datetime"> ` | Selector de fecha y hora.                                   |                                                              |
-| `<input type="email">`     | Entrada de texto de una sola línea para correo.             |                                                              |
-| `<input type="file">`      | Selección de archivo.                                       |                                                              |
-| `<input type="month">`     | Selector de mes y año.                                      |                                                              |
-| `<input type="number">`    | Campo de entrada de un número.                              | min, max: restricción de valores.                            |
-| `<input type="range">`     | Slider para seleccionar un número.                          | min, max, step: restricciones de valores.                    |
-| `<input type="search">`    | Entrada de texto de una sola línea para búsqueda.           |                                                              |
-| `<input type="tel">`       | Entrada de texto de una sola línea para teléfono.           | pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}".                        |
-| `<input type="time">`      | Selector de una hora.                                       |                                                              |
-| `<input type="url">`       | Entrada de texto de una sola línea para una URL.            |                                                              |
-| `<input type="week">`      | Permite seleccionar un semana y el año.                     |                                                              |
-| `<select>`                 | Lista despegable.                                           | size: número de valores visibles, mutiple: permite selección múltiple. |
-| `<option>`                 | Opción de una lista despegable de `<select>` o `<datalist>` | value: texto que se regresa como resultado, selected: opción inicial seleccionada. |
-| `<textarea>`               | Campo de entrada de múltiples líneas.                       | rows: número de filas, cols: número de columnas. style="resize: none" |
-| `<button>`                 | Botón.                                                      | type: tipo de botón.                                         |
-| `<datalist>`               | Lista de opciones predefinidas para un elemento `<input>`.  | id: identificador de la lista para el elemento `<input>`.    |
-| `<output>`                 | Resultado de un cálculo de un script.                       | for: nombre de los id de los elementos involucrados en el resultado. |
+| Tipo                       | Descripción                                                  | Atributos especiales                                         |
+| -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `<input type="text">`      | Entrada de texto de una sola línea.                          |                                                              |
+| `<input type="radio">`     | Botón de radio que selecciona una de varias opciones.        | name: nombre que enlaza a los botones, checked: el elemento es seleccionado al iniciar. |
+| `<input type="submit">`    | Botón de envío.                                              | value: texto que aparece en el botón.                        |
+| `<input type="password"> ` | Entrada de texto de una sola línea para una contraseña.      |                                                              |
+| `<input type="reset">`     | Borra todo el contenido de los elementos.                    |                                                              |
+| `<input type="checkbox"> ` | Botón tipo check que puede elegir varias opciones.           | checked: el elemento es seleccionado al iniciar.             |
+| `<input type="color">`     | Paleta de colores.                                           |                                                              |
+| `<input type="date">`      | Selector de fecha.                                           | min, max: restricción de fecha tipo(aaaa-mm-dd).             |
+| `<input type="datetime"> ` | Selector de fecha y hora.                                    |                                                              |
+| `<input type="email">`     | Entrada de texto de una sola línea para correo.              |                                                              |
+| `<input type="file">`      | Selección de archivo.                                        |                                                              |
+| `<input type="month">`     | Selector de mes y año.                                       |                                                              |
+| `<input type="number">`    | Campo de entrada de un número.                               | min, max: restricción de valores.                            |
+| `<input type="range">`     | Slider para seleccionar un número.                           | min, max, step: restricciones de valores.                    |
+| `<input type="search">`    | Entrada de texto de una sola línea para búsqueda.            |                                                              |
+| `<input type="tel">`       | Entrada de texto de una sola línea para teléfono.            | pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}".                        |
+| `<input type="time">`      | Selector de una hora.                                        |                                                              |
+| `<input type="url">`       | Entrada de texto de una sola línea para una URL.             |                                                              |
+| `<input type="week">`      | Permite seleccionar una semana y el año.                     |                                                              |
+| `<select>`                 | Lista despegable.                                            | size: número de valores visibles, multiple: permite selección múltiple. |
+| `<option>`                 | Opción de una lista desplegable de `<select>` o `<datalist>` | value: texto que se regresa como resultado, selected: opción inicial seleccionada. |
+| `<textarea>`               | Campo de entrada de múltiples líneas.                        | rows: número de filas, cols: número de columnas. style="resize: none" |
+| `<button>`                 | Botón.                                                       | type: tipo de botón.                                         |
+| `<datalist>`               | Lista de opciones predefinidas para un elemento `<input>`.   | id: identificador de la lista para el elemento `<input>`.    |
+| `<output>`                 | Resultado de un cálculo de un script.                        | for: nombre de los id de los elementos involucrados en el resultado. |
 
 ## Atributos de `<input>` 
 
-- `name=""` nombre de controlo utilizado para identificar el elemento al momento de enviar. 
+- `name=""` nombre de control utilizado para identificar el elemento al momento de enviar. 
 - `value=""` valor inicial del elemento. 
-- `list=""` referencia al atributo id de un elemento <datalist>. 
+- `list=""` referencia al atributo id de un elemento `<datalist>`. 
 - `disabled` deshabilita un elemento. 
 - `max=""` especifica un valor máximo. 
 - `maxlength=""` máximo número de caracteres. 
@@ -79,11 +79,11 @@ Un formulario `<form></form>` es una entrada de datos por parte del usuario, est
 - `readonly` elemento que solo puede ser leído pero no cambiado. 
 - `requiered` elemento que es requerido. 
 - `size=""` especifica el ancho en caracteres. 
-- `step=""` especifia los intervalos legales. 
-- `autocomplete=""` un elemento debe autocompletarse. 
+- `step=""` especifica los intervalos legales. 
+- `autocomplete=""` un elemento debe autocompletar. 
   - `on`
   - `off` 
-- `novalidate` los datos del formulario no deben de ser validados. 
+- `novalidate` los datos del formulario no deben ser validados. 
 - `autofocus` elementos que deben tener el foco al cargar la página. 
 - `form=""` pertenece al formulario con el id. 
 - `formaction=""` especifica la dirección de la URL de un archivo que va a procesar el control de entrada cuando se envíe el formulario. Solo con type="submit" y type="image". 

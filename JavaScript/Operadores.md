@@ -63,5 +63,5 @@
 | ~    | Complemento                               |
 | ^    | Xor                                       |
 | <<   | Rellenar con ceros la izquierda           |
-| >>   | Desplazamiento hacía la derecha con signo |
+| >>   | Desplazamiento hacia la derecha con signo |
 | >>>  | Rellenar con ceros la derecha             |

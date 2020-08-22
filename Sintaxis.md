@@ -114,6 +114,6 @@ def sum(num1, num2):
 
 ## \
 
-Los carácteres especiales no tienen efecto con \
+Los caracteres especiales no tienen efecto con \
 
 \`Hola\`

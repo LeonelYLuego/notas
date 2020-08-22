@@ -22,13 +22,13 @@ Se puede comprobar si el objeto es de la clase especificada con:
 var_dump($banana instanceof Fruit);
 ~~~
 
- Para utilizar el constructor de la clase se utiliza function `__construct(parametros)` y para el destructor del objeto se utiliza function `__destruct(parametros)`. 
+ Para utilizar el constructor de la clase se utiliza function `__construct(parámetros)` y para el destructor del objeto se utiliza function `__destruct(parámetros)`. 
 
 Los modificadores de acceso son: 
 
 - `public` puede ser accedido desde cualquier lado (por defecto). 
 - `protected` la propiedad puede ser accedida por la clase y por las clases heredadas. 
-- `private` solo puede ser accedido por la clase. 
+- `private` sólo puede ser accedido por la clase. 
 
 Para heredar una clase se utiliza la palabra reservada `extends`, por ejemplo: 
 
@@ -38,9 +38,9 @@ class Strawberry extends Fruit{
 }
 ~~~
 
-El constructor de una clase heredada no llama al constructor de se clase padre, si no todo se inicia desde el constructor de la clase heredada. 
+El constructor de una clase heredada no llama al constructor de su clase padre, si no todo se inicia desde el constructor de la clase heredada. 
 
-La palabra `final` evita que la clase puede tener herencia. 
+La palabra `final` evita que la clase pueda tener herencia. 
 
 ~~~php
 final class Fruit{

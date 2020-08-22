@@ -7,14 +7,14 @@ try:
 	#código
 ~~~
 
-Para tratar esté error utilizamos la palabra:
+Para tratar este error utilizamos la palabra:
 
 ~~~python
 except Exception:
 	#código
 ~~~
 
-Esta ultima debe contener el nombre del error, y si es un error genérico utilizamos la clase Exception. Podemos renombrar el tipo de error:
+Esta última debe contener el nombre del error, y si es un error genérico utilizamos la clase Exception. Podemos renombrar el tipo de error:
 
 ~~~python
 except Exception as ex:

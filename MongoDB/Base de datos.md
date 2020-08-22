@@ -1,6 +1,6 @@
 # Base de datos
 
-`db` Muesta la base de datos actual 
+`db` Muestra la base de datos actual 
 
 `show dbs` Muestra las base de datos 
 

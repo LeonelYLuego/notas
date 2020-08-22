@@ -6,11 +6,11 @@
 
 `db.products.update({"name":"desktop"}, {$set:{"description":"Gaming Desktop"}}, {upsert:true})` Ejemplo modifica un documento y si no lo encuentra lo agrega 
 
-`db.products.update({"name":"keyboard"}, {$inc:{"price":0.01}})` Ejemplo modifica un valor númerico de un documento incrementandolo 
+`db.products.update({"name":"keyboard"}, {$inc:{"price":0.01}})` Ejemplo modifica un valor numérico de un documento incrementandolo 
 
 `db.products.update({"name":"laptop"}, {$rename:{"name":"nombre"}})` Ejemplo modifica el identificador de un valor de un documento 
 
-`db.products.remove({"nombre":"laptop"})` Ejemplo elimina el documento que conincida 
+`db.products.remove({"nombre":"laptop"})` Ejemplo elimina el documento que coincida 
 
 `db.products.remove({})` Ejemplo elimina todos los documentos
 

@@ -17,10 +17,10 @@ Algunos de los eventos son:
 | `onkeydown`    | Este evento ocurre cuando una tecla es presionada sobre un elemento. Este atributo se puede emplear con la mayoría de las etiquetas. |
 | `onload`       | Ocurre cuando finaliza la carga de una página en una ventana o de todos los marcos en una página dividida en marcos. Se puede emplear en `<body>`, `<frameset>`. |
 | `onunload`     | Ocurre cuando se quita una página web de una ventana o de una marco. Se puede emplear en `<body>`, `<frameset>`. |
-| `ondblclick`   | Ocurre cuando del botón del dispositivo apuntador es pulsado dos veces sobre un elemento. Se puede emplear en la mayoría de las etiquetas. |
-| `onmousedown ` | Este evento ocurre cuando el botón del dispositivo puntador es presionado sobre un elemento. Este atributo se puede emplear con la mayoría de las etiquetas. Este evento es distinto de onclick, ya que este último se origina cuando se presiona y se suelta el botón. |
+| `ondblclick`   | Ocurre cuando el botón del dispositivo apuntador es pulsado dos veces sobre un elemento. Se puede emplear en la mayoría de las etiquetas. |
+| `onmousedown ` | Este evento ocurre cuando el botón del dispositivo apuntador es presionado sobre un elemento. Este atributo se puede emplear con la mayoría de las etiquetas. Este evento es distinto de `onclick`, ya que este último se origina cuando se presiona y se suelta el botón. |
 | `onmouseup`    | Este evento ocurre cuando el botón del dispositivo apuntado es soltado sobre un elemento. Este atributo se puede emplear con la mayoría de las etiquetas. |
-| `onmousemove ` | Este evento ocurre cuando el dispositivo apuntador es movido mientras está sobre un elemento. Este atributo se puede emplear con la mayoría de las etiquetas. |
+| `onmousemove ` | Este evento ocurre cuando el dispositivo apuntador se mueve mientras está sobre un elemento. Este atributo se puede emplear con la mayoría de las etiquetas. |
 | `onfocus`      | este evento ocurre cuando un elemento recibe el foco, ya sea por el dispositivo apuntador o mediante tabulación. Este atributo se puede emplear con las etiquetas `<a>`, `<area>`, `<label>`, `<input>`, `<select>`, `<textarea>`, `<button>`. |
 | `onblur`       | Este evento ocurre cuando un elemento pierde el foco, ya sea por el dispositivo apuntador o mediante tabulación. Este atributo se puede emplear con las etiquetas `<a>`, `<area>`, `<label>`, `<input>`, `<select>`, `<textarea>`, `<button>`. |
 | `onkeypress`   | Este evento ocurre cuando una tecla es presionada y soltada sobre un elemento. Este atributo se puede emplear con la mayoría de las etiquetas. |

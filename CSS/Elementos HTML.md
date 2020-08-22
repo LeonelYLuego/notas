@@ -4,7 +4,7 @@
 
 Los enlaces tienen diferentes estados: 
 
-- `a:link` un enlace no visitado normales. 
+- `a:link` un enlace no visitado normalmente. 
 - `a:visited` un enlace que el usuario ha visitado. 
 - `a:hover` un enlace cuando los usuarios se desplazan sobre ella. 
 - `a:active` un enlace el momento en que se hace clic. 
@@ -35,13 +35,13 @@ Los enlaces tienen diferentes estados:
 
 `border` especifica un borde para la tabla. 
 
-`width, height` especifica el alto de la table. 
+`width, height` especifica el alto de la `table`. 
 
 `text-align:` propiedad que establece la alineación horizontal. 
 
 `vertical-align:` propiedad que establece la alineación vertical. 
 
-`tr:hover:` establece que al pasar el ratón cambie alguna propiedad. 
+`tr:hover:` establece que al pasar el ratón se cambie alguna propiedad. 
 
 `tr:nth-child(even):` selecciona las filas pares. 
 

@@ -6,19 +6,19 @@ Las celdas se agrupan en filas, que se definen con la etiqueta `<tr></tr>` (tabl
 
 Una tabla se compone de celdas de datos. Una celda se define usando la etiqueta `<td></td>` (table data). 
 
-Pueden existir celdas que se emplean como encabezados de filas o de columnas; estas celdas se definen con la etiqueta `<th></th>` (table heading). Este tipo de celdas suelen aparecer difinidas de las otras, normalmente con el texto en negrita. 
+Pueden existir celdas que se emplean como encabezados de filas o de columnas; estas celdas se definen con la etiqueta `<th></th>` (table heading). Este tipo de celdas suelen aparecer definidas de las otras, normalmente con el texto en negrita. 
 
 Las celdas pueden contener cualquier elemento HTML: texto, imágenes, enlaces e incluso otras tablas anidadas. 
 
 ## Atributos de `<table>`
 
-`border="0"` el borde de la tabla no se tiene que dibujar y la tabal se emplea para maquetar el contenido. 
+`border="0"` el borde de la tabla no se tiene que dibujar y la tabla se emplea para maquetar el contenido. 
 
 `border="1"` el borde de la tabla se tiene que dibujar y la tabla no se emplea para maquetar el contenido, sino para mostrar datos tabulados. 
 
-`cellpadding="n"` modifica la distancia en pixeles existente entre el borde de una celda y su contenido, el valor por defecto es 1 
+`cellpadding="n"` modifica la distancia en píxeles existente entre el borde de una celda y su contenido, el valor por defecto es 1 
 
-`cellspacing="n"` modifica la distancia en pixeles existen entre los bordes de dos celdas contiguas, el valor por defecto es 2 
+`cellspacing="n"` modifica la distancia en píxeles existen entre los bordes de dos celdas contiguas, el valor por defecto es 2 
 
 ## Atributos de `<td>` `<th>` `<tr>`
 
@@ -28,9 +28,9 @@ Las celdas pueden contener cualquier elemento HTML: texto, imágenes, enlaces e 
 
 ## Otras etiquetas
 
-`<caption></caption>` define el titulo de la tabla. 
+`<caption></caption>` define el título de la tabla. 
 
-`<thead></thead>` agrupa las filas que forma la cabecera de la tabla. 
+`<thead></thead>` agrupa las filas que forman la cabecera de la tabla. 
 
 `<tbody></tbody>` agrupa las filas que forman el cuerpo de la tabla. 
 

@@ -1,6 +1,6 @@
 # Decoradores
 
-Un decorador es una función que recibe como argumento una función y la ejecuta antes o después de las operaciones que deseemos agregar, retornándonos la función para que nosotros la ejecutemos, su sintaxis es la siguiente:
+Un decorador es una función que recibe como argumento una función y la ejecuta antes o después de las operaciones que deseemos agregar, retornando la función para que nosotros la ejecutemos, su sintaxis es la siguiente:
 
 ~~~python
 def my_decorator(function):

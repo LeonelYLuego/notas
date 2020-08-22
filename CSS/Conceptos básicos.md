@@ -33,5 +33,5 @@ La jerarquía de los selectores de CSS van con el siguiente orden:
 
 1. Estilos de línea `<p style="color: white">`. 
 2. ID `#nombreId`. 
-3. Clases `.nombreClase` y atributos y pseudo clases `:first-child` `:hover`.
-4. Elementos `a` `p` `ul` y pseudo elementos `::after` `::before` `::first-letter`.
+3. Clases `.nombreClase` y atributos y pseudo clases `:first-child`, `:hover`.
+4. Elementos `a`, `p`, `ul` y pseudo elementos `::after`, `::before`, `::first-letter`.

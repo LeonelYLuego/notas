@@ -38,7 +38,7 @@
 
 `static` variable que se inicia en 0 o en el valor que le damos y que al salir del bloque y regresar sigue teniendo su valor.
 
-`extern` utilizar una variable cuando su definición esta abajo de ella, es global.
+`extern` utilizar una variable cuando su definición está abajo de ella, es global.
 
 `auto` sólo es visible en el bloque donde está definida.
 
@@ -50,29 +50,29 @@
 
 `cin >> dato >> dato2` sirve para obtener datos numéricos de los diferentes tipos.
 
-`cin.get();` obtiene solo un carácter en ASCII.
+`cin.get();` obtiene sólo un carácter en ASCII.
 
-`getline(cin, string);` puede obtener una línea de caracteres hasta \n para una cadena de caracteres.
+`getline(cin, string);` puede obtener una línea de caracteres hasta `\n` para una cadena de caracteres.
 
 `getline(cin, datos, ';');` obtiene datos y los guarda en un string hasta llegar al carácter dicho.
 
 ### Punteros y matrices
 
-`void Funcion(m[]) {` pasar una matriz completa por una funcion.
+`void Funcion(m[]) {` pasar una matriz completa por una función.
 
 `m = v;` donde se puede pasar un vector completo a otro.
 
-`char cadena[10] = "abcd";` podemos agregar los valores de caracteres de esta manera y automáticamente el ultimo se pone '\0' para saber que es el final.
+`char cadena[10] = "abcd";` podemos agregar los valores de caracteres de esta manera y automáticamente el último se pone '\0' para saber que es el final.
 
-`int *q = static_cast<int *> (p);` conversion de un puntero a otro tipo por ejemplo void *. 
+`int *q = static_cast<int *> (p);` conversión de un puntero a otro tipo por ejemplo void *. 
 
-`const tipo *nombre-punt = ...;` puntero que se puede cambiar de direccion pero no puede cambiar el valor apuntado.
+`const tipo *nombre-punt = ...;` puntero que se puede cambiar de dirección pero no puede cambiar el valor apuntado.
 
-`tipo* const nombre-punt = ...;` puntero que no se puede cambiar de direccion pero puede cambiar el valor apuntado.
+`tipo* const nombre-punt = ...;` puntero que no se puede cambiar de dirección pero puede cambiar el valor apuntado.
 
 `const tipo* const nombre-punt = ...;` puntero  que no se puede cambiar de direccion ni puede cambiar el valor apuntado.
 
-`int& ultimo = a[4];` se crea un un sinonimo al valor numerico.
+`int& ultimo = a[4];` se crea un un sinónimo al valor numerico.
 
 `fill(p, p + nbytes, 0);` pone esa memoria desde el primer puntero al ultimo en el valor especificado.
 

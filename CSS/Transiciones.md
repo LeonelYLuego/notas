@@ -46,7 +46,7 @@ Propiedades que pueden ser animadas
 
  
 
-Para hacer uso de las transiciones se puede utilizar la función de los selectores, por ejemplo: `hover`, que se activa cuando el cursor pasa sobre el él.
+Para hacer uso de las transiciones se puede utilizar la función de los selectores, por ejemplo: `hover`, que se activa cuando el cursor pasa sobre él.
 
 ~~~css
 div{
