@@ -19,7 +19,7 @@ Obviamente si los datos de entrenamiento están llenos de errores, valores atíp
 
 ## Características irrelevantes
 
-Es sistema sólo será capaz de aprender si los datos de entrenamiento contienen suficiente características relevantes y no demasiadas irrelevantes.  Una parte crítica del Machine Learning es crear un buen conjunto de características para entrenar. Este proceso implica:
+El sistema sólo será capaz de aprender si los datos de entrenamiento contienen suficiente características relevantes y no demasiadas irrelevantes.  Una parte crítica del Machine Learning es crear un buen conjunto de características para entrenar. Este proceso implica:
 
 - Selección de características (seleccionando las funciones más útiles para entrenar entre las funciones existentes).
 - Extracción de características (combinando características existentes para producir una más útil).

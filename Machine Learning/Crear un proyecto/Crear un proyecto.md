@@ -553,4 +553,4 @@ Para medir si el sistema se está deteriorando se debe establecer una variable q
 - Escribir un script para evaluar el modelo nuevo y viejo en el conjunto de pruebas actualizado y desplegar el modelo si el rendimiento no ha disminuido (si lo hizo hay que investigar por qué).
 - Evaluar la calidad de los datos de entrada monitoreando si faltan entradas, si la desviación media o estándar se aleja demasiado del conjunto de entrenamiento, o si una categoría empieza a tener nuevos valores.
 
-Finalmente se debe tener una copia de seguridad de cada modelo y de cada conjunto de datos.
+  Finalmente se debe tener una copia de seguridad de cada modelo y de cada conjunto de datos.
